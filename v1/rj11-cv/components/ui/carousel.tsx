@@ -95,6 +95,7 @@ function Carousel({
 
   React.useEffect(() => {
     if (!api) return
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- stock shadcn component; initial sync read is intentional
     onSelect(api)
     api.on("reInit", onSelect)
     api.on("select", onSelect)
