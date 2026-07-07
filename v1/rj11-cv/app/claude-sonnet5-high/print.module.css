@@ -1,0 +1,14 @@
+/* Print-only rules for this route. Scoped by import — only loaded when
+   this route is visited, so it cannot leak into other agents' pages. */
+
+@page {
+  margin: 14mm 16mm;
+}
+
+@media print {
+  html,
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+}

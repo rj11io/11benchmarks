@@ -1,0 +1,71 @@
+.cv-container {
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media (max-width: 640px) {
+  .cv-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+/* Print styles */
+@page {
+  margin: 0.75in;
+  size: letter;
+}
+
+@media print {
+  body {
+    background-color: white;
+  }
+
+  .cv-container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .cv-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .cv-section {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+  }
+
+  .cv-entry {
+    break-inside: avoid;
+    margin-bottom: 1.25rem;
+  }
+
+  .print-hidden {
+    display: none;
+  }
+
+  a {
+    color: #0f172a;
+    text-decoration: none;
+  }
+
+  /* Prevent awkward page breaks */
+  .cv-section-title,
+  .cv-entry-title {
+    break-after: avoid;
+  }
+}
+
+@media screen {
+  .print-hidden {
+    display: inline;
+  }
+}

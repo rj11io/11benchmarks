@@ -1,0 +1,61 @@
+/* Scoped styles for the CV route. Nothing here leaks to other runs. */
+
+.serif {
+  font-family: var(--font-serif), ui-serif, Georgia, "Times New Roman", serif;
+  font-optical-sizing: auto;
+}
+
+/* A thin dash used as the bullet marker, aligned to the first text line. */
+.marker {
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  height: 1px;
+  width: 0.55rem;
+  background: var(--muted-foreground);
+  opacity: 0.55;
+}
+
+@media print {
+  /* Force a clean, readable black-on-white document — even if the screen
+     was in dark mode. Overriding the raw theme variables on this scope
+     re-tints every Tailwind color utility inside the page at once while
+     keeping the muted/foreground hierarchy intact. */
+  .page {
+    --background: #ffffff;
+    --foreground: #17181c;
+    --muted-foreground: #565962;
+    --border: #d3d5da;
+    --primary: #17181c;
+    --primary-foreground: #ffffff;
+    background: #ffffff !important;
+    color: var(--foreground);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Links stay legible: solid dark text, always underlined. */
+  .page a {
+    color: var(--foreground) !important;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  /* Keep a role/degree/project and its details on one page. */
+  .entry {
+    break-inside: avoid;
+  }
+
+  /* Never strand a section label at the bottom of a page. */
+  .eyebrow {
+    break-after: avoid;
+  }
+
+  .avoidBreak {
+    break-inside: avoid;
+  }
+}
+
+@page {
+  margin: 1.5cm 1.7cm;
+}

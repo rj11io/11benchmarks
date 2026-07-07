@@ -1,0 +1,142 @@
+.routeShell {
+  --cv-paper: #f6f0e7;
+  --cv-panel: #fffaf2;
+  --cv-ink: #211a16;
+  --cv-soft: #6d635c;
+  --cv-accent: #8a5a3d;
+  --cv-line: rgb(55 37 24 / 0.12);
+  min-height: 100svh;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgb(159 115 88 / 0.14),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgb(109 83 63 / 0.12),
+      transparent 24%
+    ),
+    linear-gradient(180deg, #e8ddd1 0%, #f4eee8 34%, #efe7de 100%);
+  color: var(--cv-ink);
+}
+
+.sheet {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    rgb(255 252 246 / 0.96),
+    rgb(248 241 232 / 0.94)
+  );
+}
+
+.sheet::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgb(255 255 255 / 0.2),
+      transparent 20% 80%,
+      rgb(255 255 255 / 0.18)
+    ),
+    linear-gradient(180deg, rgb(255 255 255 / 0.12), transparent 22%);
+}
+
+.sectionTitle {
+  break-after: avoid;
+}
+
+.avoidBreak {
+  break-inside: avoid;
+}
+
+.summaryLead {
+  font-family: var(--font-cv-serif), ui-serif, Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.22rem, 2vw, 1.52rem);
+  line-height: 1.36;
+}
+
+.summaryBody {
+  font-size: 0.98rem;
+  line-height: 1.82;
+}
+
+.timeline {
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.35rem;
+  top: 0.2rem;
+  bottom: 0.2rem;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    rgb(138 90 61 / 0.28),
+    rgb(32 26 22 / 0.08)
+  );
+}
+
+.timelineDot {
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  height: 0.7rem;
+  width: 0.7rem;
+  border-radius: 9999px;
+  border: 1px solid rgb(138 90 61 / 0.28);
+  background: var(--cv-panel);
+  box-shadow: 0 0 0 0.2rem rgb(246 240 231 / 0.92);
+}
+
+.skillsCard {
+  break-inside: avoid;
+}
+
+@media print {
+  .routeShell {
+    --cv-paper: #ffffff;
+    --cv-panel: #ffffff;
+    --cv-ink: #111111;
+    --cv-soft: #4b4b4b;
+    --cv-accent: #111111;
+    --cv-line: rgb(0 0 0 / 0.18);
+    min-height: auto;
+    background: #ffffff !important;
+    color: var(--cv-ink);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .sheet {
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+  }
+
+  .sheet::before {
+    display: none;
+  }
+
+  .timeline::before {
+    background: rgb(0 0 0 / 0.12);
+  }
+
+  .routeShell a {
+    color: var(--cv-ink) !important;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+}
+
+@page {
+  margin: 12mm 14mm 14mm;
+}

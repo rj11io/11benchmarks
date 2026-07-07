@@ -1,0 +1,25 @@
+/* Print setup for this route only. Loaded via CSS module so nothing here
+   can leak into other routes. */
+
+@page {
+  size: A4;
+  margin: 15mm 16mm 18mm;
+}
+
+.page {
+  min-height: 100svh;
+}
+
+/* Force a light, black-on-white palette when printing, even if the screen
+   is in dark mode. Redefining the theme tokens on this container beats the
+   `.dark` values inherited from <html> for everything inside it. */
+@media print {
+  .page {
+    --background: #ffffff;
+    --foreground: #141414;
+    --muted-foreground: #4d4d4d;
+    --border: #d9d9d9;
+    background: #ffffff;
+    color: #141414;
+  }
+}

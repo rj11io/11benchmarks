@@ -1,0 +1,23 @@
+.printRoot {
+  --page-inline: clamp(1.25rem, 4vw, 4.5rem);
+}
+
+@page {
+  size: auto;
+  margin: 14mm 15mm 16mm;
+}
+
+@media print {
+  .printRoot {
+    background: #ffffff !important;
+    color: #000000 !important;
+    print-color-adjust: exact;
+  }
+
+  .printRoot *,
+  .printRoot *::before,
+  .printRoot *::after {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}

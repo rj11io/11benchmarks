@@ -1,0 +1,61 @@
+/* Scoped styles for the run folder only. */
+
+.page {
+  --background: oklch(0.987 0.009 92);
+  --foreground: oklch(0.185 0.02 262);
+  --muted-foreground: oklch(0.485 0.016 262);
+  --border: oklch(0.865 0.02 90);
+  --primary: oklch(0.255 0.03 262);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.965 0.012 90);
+  --accent: oklch(0.955 0.016 240);
+  --card: oklch(0.995 0.002 92);
+  color-scheme: light;
+  background-color: var(--background);
+  background-image:
+    radial-gradient(circle at 10% 0%, rgba(181, 147, 86, 0.18), transparent 32%),
+    radial-gradient(circle at 90% 2%, rgba(80, 114, 192, 0.12), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(246, 242, 235, 0.94));
+  background-repeat: no-repeat;
+}
+
+.entry {
+  break-inside: avoid;
+}
+
+.profileCard {
+  break-inside: avoid;
+}
+
+.sectionTitle {
+  break-after: avoid;
+}
+
+@page {
+  margin: 15mm 16mm;
+}
+
+@media print {
+  .page {
+    --background: #ffffff;
+    --foreground: #17181c;
+    --muted-foreground: #5a6068;
+    --border: #d7dce3;
+    --primary: #17181c;
+    --primary-foreground: #ffffff;
+    --secondary: #f5f6f8;
+    --accent: #f5f6f8;
+    --card: #ffffff;
+    background: #ffffff !important;
+    background-image: none !important;
+    color: var(--foreground);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page a {
+    color: var(--foreground) !important;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+}
