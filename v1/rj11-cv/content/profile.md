@@ -1,11 +1,11 @@
 ---
 name: Ricardo Jorge
-title: AI + Product Engineer
+title: AI Product Engineer
 location: Lisbon, Portugal
 website: https://www.rj11.io
-email: you@example.com
-linkedin: yourhandle
-github: yourhandle
+email: ricardojorgexyz@gmail.com
+linkedin: rj11io
+github: rj11io
 ---
 
 Hi, I'm Ricardo Jorge — you can call me RJ. I've been coding since I was
