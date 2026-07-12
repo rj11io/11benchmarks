@@ -1,7 +1,7 @@
 # Experience
 
 ## AI Product Engineer
-company: rj11io
+company: rj11io (B2B Freelance)
 period: Mar 2025 — Present
 location: Portugal · Remote
 url: https://www.rj11.io
@@ -19,7 +19,7 @@ building projects from the ground up:
 - AI smart scraping agents
 
 ## Product / Datavis Engineer
-company: Hunt Intelligence, Inc.
+company: Hunt Intelligence, Inc. (B2B Freelance)
 period: Apr 2024 — Mar 2025
 location: Remote
 
