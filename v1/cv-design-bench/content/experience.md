@@ -1,9 +1,9 @@
 # Experience
 
 ## AI Product Engineer
-company: rj11io (B2B Freelance)
+company: rj11io
 period: Mar 2025 — Present
-location: Portugal · Remote
+location: B2B · Remote
 url: https://www.rj11.io
 
 Hands-on product engineering mercenary for multiple early-stage startups,
@@ -19,9 +19,9 @@ building projects from the ground up:
 - AI smart scraping agents
 
 ## Product / Datavis Engineer
-company: Hunt Intelligence, Inc. (B2B Freelance)
+company: Hunt Intelligence, Inc.
 period: Apr 2024 — Mar 2025
-location: Remote
+location: B2B · Remote
 
 - Built a modern TypeScript codebase with the latest Next.js and shadcn/ui,
   production and staging environments on Vercel, end-to-end tests with
