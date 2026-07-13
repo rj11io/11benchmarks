@@ -6,11 +6,11 @@ period: Mar 2025 — Present
 location: B2B · Remote
 url: https://www.rj11.io
 
-Hands-on product engineering mercenary for multiple early-stage startups, building projects from the ground up:
+Hands-on AI product engineering for multiple early-stage startups, building projects from the ground up:
 
 - AI Data Extraction from PDFs
 - AI SEO Analytics
-- Dermatopathology Portal
+- GenAI Dermatopathology Portal
 - Real Estate Platform
 - Multiple Cybersecurity Dashboards
 - Multiple Proprietary Data Explorers
@@ -32,41 +32,29 @@ threat-intelligence product:
   hooked up to Slack
 - Built custom data visualisation components like the IP History Widget
 - Built core product modules like AttackCapture™ and HuntSQL™
-- Built a new API documentation platform on top of OpenAPI — enriched the
+- Built a new API documentation platform on top of OpenAPI: enriched the
   raw `openapi.json` with metadata and shipped a UI friendlier and more
   intuitive than Swagger
 
-## Senior Frontend Team Lead
+## Senior Frontend Engineer → Team Lead
 company: OMEGA Systems
-period: Jan 2024 — Apr 2024
+period: Jun 2023 — Apr 2024
 location: Remote
 
-Led the frontend team working on CORE5 — the next generation of the
-platform management software, with bleeding-edge technology and fresh
-UI/UX design.
+Joined to build the next generation of OMEGA's iGaming platform management
+system (CORE5) with TypeScript and React. Promoted to lead the frontend
+team.
 
-- Built the "New Developer" onboarding experience and documentation
-- Set best practices for remote / async workflows and operations
-- Set company standards for tickets and documentation, with strong
+- Data visualisation for the Main and Social dashboards, plus report and
+  configuration views (Cashback, Refer-a-Friend, Pending Withdrawals,
+  Challenges / Leaderboards)
+- Built the localisation / internationalisation module and an internal
+  "Tab System" UI
+- As lead: built the "New Developer" onboarding experience, set standards
+  for tickets, documentation, and remote / async workflows, with strong
   emphasis on the "Definition of Done"
-- Product-engineered new features from scratch, end to end
-- Gave weekly technical talks to bring the whole team up to speed
-
-## Senior Frontend Engineer
-company: OMEGA Systems
-period: Jun 2023 — Jan 2024
-location: Remote
-
-Worked on the next generation of the core platform management system for
-iGaming, using TypeScript and React to build a fresh UI, improve user
-experience, and deliver data-rich dashboards.
-
-- Data visualisation for the Main and Social dashboards
-- Report and configuration views: Cashback, Refer-a-Friend, Social
-  Package, Pending Withdrawals, Challenges / Leaderboards
-- Core operations and maintenance views
-- Built the localisation / internationalisation module
-- Built an internal "Tab System" UI
+- Gave weekly "TED" talks to bring the whole team up to speed on technology and product
+- Kept shipping: product-engineered new features from scratch, end to end
 
 ## Senior Frontend Engineer
 company: Phantasma Chain
@@ -141,7 +129,7 @@ location: Remote
 Built an admin dashboard for the AHA's Kinect integration: interfaced
 users with the collected data, connected doctors and their patients,
 printed reports, and let superusers manage the whole system. Acquired
-through a university scholarship with free choice of technology — my
+through a university scholarship with free choice of technology, so I built my
 first web app as a full-stack JavaScript developer, using React and Node.
 
 ## Frontend Developer
@@ -164,5 +152,4 @@ location: Lisbon, Portugal
 Internship. Built a management system for the online store using Java and
 MySQL. What started as a simple display-and-print tool for the back
 office evolved into a full application managing orders, printing detailed
-reports, and sending automated emails to customers — all previously done
-by hand.
+reports, and sending automated emails to customers. Which all were previously done by hand.
