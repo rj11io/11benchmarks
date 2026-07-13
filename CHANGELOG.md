@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/rj11io/11benchmarks/compare/v1.1.0...v1.2.0) (2026-07-13)
+
+
+### Bug Fixes
+
+* **cv-design-bench:** update costs ([12d04ed](https://github.com/rj11io/11benchmarks/commit/12d04ed50226e57f15425d64755d7977aa7e09c0))
+
+
+### Features
+
+* **cv-design-bench:** costs ([80f28b2](https://github.com/rj11io/11benchmarks/commit/80f28b218f6cb3eced6901d4262b947033c930ec))
+
 # [1.1.0](https://github.com/rj11io/11benchmarks/compare/v1.0.0...v1.1.0) (2026-07-13)
 
 
