@@ -1,0 +1,37 @@
+{
+  "runId": "codex-gpt5.6-sol-high",
+  "computedAt": "2026-07-13T11:15:53.060Z",
+  "method": "measured",
+  "kind": "benchmark-run",
+  "sources": [
+    "~/.codex/sessions/2026/07/13/rollout-2026-07-13T11-43-36-019f5b13-42c7-7ba3-86ba-1f5d06e960f5.jsonl"
+  ],
+  "byModel": {
+    "gpt-5.6-sol": {
+      "input": 2070218,
+      "cachedInput": 1913600,
+      "output": 18364,
+      "reasoningOutput": 4289,
+      "costUsd": 2.29081,
+      "ratesUsed": {
+        "per1M": {
+          "input": 5,
+          "cachedInput": 0.5,
+          "output": 30
+        },
+        "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+        "verifiedAt": "2026-07-13"
+      }
+    }
+  },
+  "totals": {
+    "tokens": 2088582,
+    "costUsd": 2.29081
+  },
+  "wallTimeMinutes": 8.910533333333333,
+  "cacheHitRate": 0.9243470977452616,
+  "checks": {
+    "harnessReportedUsd": null,
+    "deltaPct": null
+  }
+}

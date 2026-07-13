@@ -1,0 +1,37 @@
+{
+  "runId": "codex-gpt5.6luna-high",
+  "computedAt": "2026-07-13T11:15:53.060Z",
+  "method": "measured",
+  "kind": "benchmark-run",
+  "sources": [
+    "~/.codex/sessions/2026/07/13/rollout-2026-07-13T11-45-39-019f5b15-2111-7991-8084-43ca032ffbc7.jsonl"
+  ],
+  "byModel": {
+    "gpt-5.6-luna": {
+      "input": 1520550,
+      "cachedInput": 1353984,
+      "output": 16409,
+      "reasoningOutput": 3827,
+      "costUsd": 0.4004184,
+      "ratesUsed": {
+        "per1M": {
+          "input": 1,
+          "cachedInput": 0.1,
+          "output": 6
+        },
+        "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+        "verifiedAt": "2026-07-13"
+      }
+    }
+  },
+  "totals": {
+    "tokens": 1536959,
+    "costUsd": 0.4004184
+  },
+  "wallTimeMinutes": 6.2340333333333335,
+  "cacheHitRate": 0.8904567426260235,
+  "checks": {
+    "harnessReportedUsd": null,
+    "deltaPct": null
+  }
+}

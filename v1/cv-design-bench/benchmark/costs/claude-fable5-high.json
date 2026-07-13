@@ -1,0 +1,40 @@
+{
+  "runId": "claude-fable5-high",
+  "computedAt": "2026-07-13T11:21:19.304Z",
+  "method": "measured",
+  "kind": "benchmark-run",
+  "sources": [
+    "~/.claude/projects/.../0c03c3cc*.jsonl",
+    "~/.claude/projects/.../5e8b2cd6*.jsonl"
+  ],
+  "byModel": {
+    "claude-fable-5": {
+      "input": 12284,
+      "cacheWrite": 32860,
+      "cacheRead": 676189,
+      "output": 8920,
+      "costUsd": 1.655779,
+      "ratesUsed": {
+        "per1M": {
+          "input": 10,
+          "output": 50,
+          "cacheWrite5m": 12.5,
+          "cacheWrite1h": 20,
+          "cacheRead": 1
+        },
+        "sourceUrl": "https://platform.claude.com/docs/en/pricing",
+        "verifiedAt": "2026-07-13"
+      }
+    }
+  },
+  "totals": {
+    "tokens": 730253,
+    "costUsd": 1.655779
+  },
+  "wallTimeMinutes": 3.4726333333333335,
+  "cacheHitRate": 0.9374158675674065,
+  "checks": {
+    "harnessReportedUsd": null,
+    "deltaPct": null
+  }
+}

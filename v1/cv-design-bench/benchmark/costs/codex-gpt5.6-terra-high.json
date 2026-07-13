@@ -1,0 +1,37 @@
+{
+  "runId": "codex-gpt5.6-terra-high",
+  "computedAt": "2026-07-13T11:15:53.060Z",
+  "method": "measured",
+  "kind": "benchmark-run",
+  "sources": [
+    "~/.codex/sessions/2026/07/13/rollout-2026-07-13T11-45-06-019f5b14-a148-7741-857d-6b20bcce1c51.jsonl"
+  ],
+  "byModel": {
+    "gpt-5.6-terra": {
+      "input": 1523682,
+      "cachedInput": 1274112,
+      "output": 10875,
+      "reasoningOutput": 2709,
+      "costUsd": 1.105578,
+      "ratesUsed": {
+        "per1M": {
+          "input": 2.5,
+          "cachedInput": 0.25,
+          "output": 15
+        },
+        "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+        "verifiedAt": "2026-07-13"
+      }
+    }
+  },
+  "totals": {
+    "tokens": 1534557,
+    "costUsd": 1.105578
+  },
+  "wallTimeMinutes": 4.6081666666666665,
+  "cacheHitRate": 0.8362059799879502,
+  "checks": {
+    "harnessReportedUsd": null,
+    "deltaPct": null
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "runId": "repo-conversations",
+  "computedAt": "2026-07-13T11:21:19.305Z",
+  "method": "measured",
+  "kind": "repo-conversations",
+  "sources": [
+    "~/.claude/projects/.../69336d12*.jsonl",
+    "~/.claude/projects/.../81b42ed6*.jsonl"
+  ],
+  "byModel": {
+    "claude-fable-5": {
+      "input": 14736,
+      "cacheWrite": 108030,
+      "cacheRead": 77941,
+      "output": 8791,
+      "costUsd": 2.015226,
+      "ratesUsed": {
+        "per1M": {
+          "input": 10,
+          "output": 50,
+          "cacheWrite5m": 12.5,
+          "cacheWrite1h": 20,
+          "cacheRead": 1
+        },
+        "sourceUrl": "https://platform.claude.com/docs/en/pricing",
+        "verifiedAt": "2026-07-13"
+      }
+    }
+  },
+  "totals": {
+    "tokens": 209498,
+    "costUsd": 2.015226
+  },
+  "wallTimeMinutes": 100.04536666666667,
+  "cacheHitRate": 0.38833224551211465,
+  "checks": {
+    "harnessReportedUsd": null,
+    "deltaPct": null
+  }
+}

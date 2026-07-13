@@ -1,0 +1,40 @@
+{
+  "runId": "cross-run-review",
+  "computedAt": "2026-07-13T11:15:53.060Z",
+  "method": "measured",
+  "kind": "post-run-review",
+  "sources": [
+    "~/.codex/sessions/2026/07/13/rollout-2026-07-13T11-55-04-019f5b1d-c035-77f3-b18d-2011ad4994c7.jsonl",
+    "~/.codex/sessions/2026/07/13/rollout-2026-07-13T11-55-38-019f5b1e-4464-7a51-bdb7-cb91b455b5c1.jsonl",
+    "~/.codex/sessions/2026/07/13/rollout-2026-07-13T11-55-40-019f5b1e-4c64-7c13-8b79-876f7a480018.jsonl",
+    "~/.codex/sessions/2026/07/13/rollout-2026-07-13T11-55-42-019f5b1e-54b3-7880-b122-5b05af24de37.jsonl"
+  ],
+  "byModel": {
+    "gpt-5.6-sol": {
+      "input": 7150798,
+      "cachedInput": 6677248,
+      "output": 50040,
+      "reasoningOutput": 20048,
+      "costUsd": 7.207573999999999,
+      "ratesUsed": {
+        "per1M": {
+          "input": 5,
+          "cachedInput": 0.5,
+          "output": 30
+        },
+        "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+        "verifiedAt": "2026-07-13"
+      }
+    }
+  },
+  "totals": {
+    "tokens": 7200838,
+    "costUsd": 7.207573999999999
+  },
+  "wallTimeMinutes": 24.601633333333332,
+  "cacheHitRate": 0.9337766218539525,
+  "checks": {
+    "harnessReportedUsd": null,
+    "deltaPct": null
+  }
+}
