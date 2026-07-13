@@ -8,7 +8,7 @@ linkedin: rj11io
 github: rj11io
 ---
 
-Hi, I'm Ricardo Jorge, but you can call me RJ. I started coding when i was very young for the fun of it: modding and reverse engineering games and consoles, building my own
+Hi, I'm Ricardo Jorge, but you can call me RJ. I'm an AI Product Engineer that started coding very young and for the fun of it: modding and reverse engineering games and consoles, building my own
 fighting game on the MUGEN engine, and running dedicated game servers for
 Counter-Strike, Minecraft, and half the titles I grew up on. In 7th grade
 science class I started programming Lego Mindstorms robots and that took our
@@ -29,7 +29,6 @@ I've had contact with all types of companies and products across many industries
 I've always carried myself as a "Self Guided Missile". You point me at a target and I'll figure out how to hit it on my own, leveraging my entire experience to
 avoid pitfalls and drive straight to the solution. This goes beyond engineering, where I would step up to fill the gap needed at the time and eventually wear all the possible hats you can wear on a startup (officially and non-officially) even though I default to product engineer since that's where I know I can have the biggest and most immediate impact.
 
-I'm an early adopter of everything technology and up to date with the
-latest AI tools. Currently working as a hands-on product engineering
-mercenary for early-stage startups. Reach out if you need extra firepower
-to ship your product.
+I'm also an early adopter of AI, started playing around with the first MidJourney and Stable Diffusion models and working with the first builds of Copilot and ChatGPT. Followed along the entire AI evolution process: code autocomplete -> prompt engineering -> context engineering -> skill creation -> harness engineering -> loop engineering. Currently tuning an automated fleet of AI agents to build personal projects.
+
+For the past couple of years I've been working as a B2B freelancer but I'm open to extraordinary opportunitties, reach out to me if you're keen on working together.
