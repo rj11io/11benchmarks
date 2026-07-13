@@ -12,7 +12,7 @@ Hi, I'm Ricardo Jorge, but you can call me RJ. I'm an AI Product Engineer
 who started coding young, purely for fun: modding and reverse-engineering
 games and consoles, building my own fighting game on the MUGEN engine, and
 running dedicated servers for Counter-Strike, Minecraft, and half the titles
-I grew up on. At 14, programming LEGO Mindstorm robots in science class
+I grew up on. At 14, programming LEGO Mindstorms robots in science class
 took our team to a second-place national finish and the final four of the
 2008 robotics world cup in China.
 
@@ -47,8 +47,11 @@ and Stable Diffusion, moving from autocomplete to prompt and context
 engineering to designing full agent harnesses. Today I run an automated
 fleet of AI agents that maintain my personal projects.
 
-For the past few years I've been working as a hands-on B2B freelancer for multiple teams where I can make the most of my technical skills, share my knowledge with others, and learn from the best professionals in their respective fields.
+For the past few years I've been working as a hands-on B2B freelancer across
+multiple teams, putting my technical skills to full use, sharing what I
+know, and learning from the best in their fields.
 
-I'm always open to explore exceptional opportunities and work on exciting projects. Reach out to me if you're keen on working together.
+I'm always open to exploring exceptional opportunities. Reach out if you're
+keen on working together.
 
 Have a nice day!
