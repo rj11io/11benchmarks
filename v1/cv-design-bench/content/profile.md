@@ -8,27 +8,47 @@ linkedin: rj11io
 github: rj11io
 ---
 
-Hi, I'm Ricardo Jorge, but you can call me RJ. I'm an AI Product Engineer that started coding very young and for the fun of it: modding and reverse engineering games and consoles, building my own
-fighting game on the MUGEN engine, and running dedicated game servers for
-Counter-Strike, Minecraft, and half the titles I grew up on. In 7th grade
-science class I started programming Lego Mindstorms robots and that took our
-team to a national second place finish and the final four of the 2008 robotics world
-cup in China, when I was only 14 years old.
+Hi, I'm Ricardo Jorge, but you can call me RJ. I'm an AI Product Engineer
+who started coding young, purely for fun: modding and reverse-engineering
+games and consoles, building my own fighting game on the MUGEN engine, and
+running dedicated servers for Counter-Strike, Minecraft, and half the titles
+I grew up on. At 14, programming LEGO Mindstorm robots in science class
+took our team to a second-place national finish and the final four of the
+2008 robotics world cup in China.
 
-Competitive gaming taught me the rest. I led teams, guilds, and clans to
-top online ladders and win local LAN tournaments, which turns out to be management
-training in disguise: recruiting, coaching, and keeping a roster of remote
-hyperactive teenagers aligned and motivated on the same strategy and goal.
+Competitive gaming taught me the rest. I led teams, guilds, and clans to the
+top of online ladders and to LAN tournament wins, which turned out to be
+management training in disguise: recruiting, coaching, and keeping a roster
+of hyperactive remote teenagers aligned on one strategy.
 
-I started working in software professionally in 2014 where I very quickly specialized in frontend Typescript applications and was an early adopter of React.js (2016) and Next.js (2018), in a time where nobody was hiring for these technologies I had the foresight to bet on what would eventually become the standard language of the web and AI engineering.
+I went professional in 2014 and quickly specialized in frontend TypeScript
+applications, building on React since 2016 and Next.js since 2018. It was a
+bet on the stack that became the standard for both the web and AI products.
 
-I was the first frontend hire for the majority of the projects that I worked on, meaning I was also responsible for the fundamental architecture, tooling, component library, infrastructure, environments, workflows, and pipelines for anything I was asked to build. I was also often responsible for growing the team, onboarding and managing the new members, and creating the playbooks for them to integrate and contribute to the project seamlessly.
+On most projects I was the first frontend hire, which meant owning the
+architecture, tooling, component library, infrastructure, and pipelines from
+day one. It also meant growing the team: hiring, onboarding, and writing the
+playbooks that let new engineers integrate seamlessly.
 
-I've had contact with all types of companies and products across many industries. But, the majority of my experience has been building cybersecurity dashboards and proprietary explorers, where I developed a passion for data-driven projects and data visualisations, and the expertise on all the patterns / best practices for a high quality product.
+I've worked with companies across many industries, but most of my experience
+is in cybersecurity, building dashboards and proprietary data explorers.
+That's where I developed a passion for data-driven products and data
+visualization, and where I learned what separates a polished product from a
+prototype.
 
-I've always carried myself as a "Self Guided Missile". You point me at a target and I'll figure out how to hit it on my own, leveraging my entire experience to
-avoid pitfalls and drive straight to the solution. This goes beyond engineering, where I would step up to fill the gap needed at the time and eventually wear all the possible hats you can wear on a startup (officially and non-officially) even though I default to product engineer since that's where I know I can have the biggest and most immediate impact.
+I operate as a self-guided missile: point me at a target and I'll figure out
+how to hit it on my own, using everything I've learned to avoid the pitfalls and drive
+straight to the solution. In practice, that has meant wearing every hat a
+startup has (officially and unofficially), though I default to product
+engineering, where I have the biggest and most immediate impact.
 
-I'm also an early adopter of AI, started playing around with the first MidJourney and Stable Diffusion models and working with the first builds of Copilot and ChatGPT. Followed along the entire AI evolution process: code autocomplete -> prompt engineering -> context engineering -> skill creation -> harness engineering -> loop engineering. Currently tuning an automated fleet of AI agents to build personal projects.
+I've built with AI since the first releases of Copilot, ChatGPT, MidJourney,
+and Stable Diffusion, moving from autocomplete to prompt and context
+engineering to designing full agent harnesses. Today I run an automated
+fleet of AI agents that maintain my personal projects.
 
-For the past couple of years I've been working as a B2B freelancer but I'm open to extraordinary opportunitties, reach out to me if you're keen on working together.
+For the past few years I've been working as a hands-on B2B freelancer for multiple teams where I can make the most of my technical skills, share my knowledge with others, and learn from the best professionals in their respective fields.
+
+I'm always open to explore exceptional opportunities and work on exciting projects. Reach out to me if you're keen on working together.
+
+Have a nice day!

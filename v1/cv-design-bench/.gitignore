@@ -8,8 +8,6 @@
 !.yarn/releases
 !.yarn/versions
 
-temp
-
 # testing
 /coverage
 
