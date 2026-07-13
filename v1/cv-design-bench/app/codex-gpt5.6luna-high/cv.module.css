@@ -1,0 +1,58 @@
+.page {
+  --paper: #f4f1eb;
+  --ink: #1c1d1a;
+  --muted: #6f716b;
+  --faint: #d8d5cd;
+  --accent: #c55432;
+  --accent-soft: #e5b7a8;
+  min-height: 100svh;
+  background: var(--paper);
+  color: var(--ink);
+  color-scheme: light;
+  font-family: var(--cv-sans), sans-serif;
+}
+
+@page {
+  size: A4;
+  margin: 13mm 15mm 14mm;
+}
+
+.entry,
+.skillGroup,
+.profileSummary,
+.educationProject {
+  break-inside: avoid;
+}
+
+.sectionHeading {
+  break-after: avoid;
+}
+
+@media print {
+  .page {
+    min-height: 0;
+    background: #ffffff !important;
+    color: #111111 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  .page a {
+    color: #111111 !important;
+    text-decoration: underline;
+    text-decoration-thickness: 0.5pt;
+    text-underline-offset: 1.5pt;
+  }
+
+  .entry,
+  .skillGroup,
+  .profileSummary,
+  .educationProject {
+    break-inside: avoid;
+  }
+}

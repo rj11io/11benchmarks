@@ -1,0 +1,311 @@
+@page {
+  size: A4 portrait;
+  margin: 12mm 14mm 14mm;
+}
+
+.cv {
+  --cv-accent: #214fd4;
+  font-family: var(--font-cv-sans), Arial, sans-serif;
+  background-image:
+    radial-gradient(circle at 15% 8%, rgb(33 79 212 / 0.08), transparent 25rem),
+    linear-gradient(rgb(23 26 34 / 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(23 26 34 / 0.025) 1px, transparent 1px);
+  background-size:
+    auto,
+    28px 28px,
+    28px 28px;
+}
+
+.display {
+  font-family: var(--font-cv-display), Georgia, serif;
+}
+
+.sheet::before {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 5px;
+  content: "";
+  background: var(--cv-accent);
+}
+
+.cvBody {
+  counter-reset: cv-section;
+}
+
+.section {
+  counter-increment: cv-section;
+}
+
+.sectionCounter::before {
+  content: counter(cv-section, decimal-leading-zero);
+}
+
+.contactLink,
+.inlineLink {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.2em;
+  transition: color 160ms ease;
+}
+
+.contactLink:hover,
+.inlineLink:hover {
+  color: var(--cv-accent);
+}
+
+.cv code {
+  border: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+  border-radius: 0.25rem;
+  background: color-mix(in srgb, currentColor 6%, transparent);
+  padding: 0.08em 0.32em;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.9em;
+}
+
+.entryHeader,
+.sectionHeading {
+  break-after: avoid-page;
+  page-break-after: avoid;
+}
+
+.entryBody p {
+  widows: 3;
+  orphans: 3;
+}
+
+.entryKeep,
+.compactSection,
+.skillsGrid > div {
+  break-inside: avoid-page;
+  page-break-inside: avoid;
+}
+
+.bulletList li {
+  break-inside: avoid-page;
+  page-break-inside: avoid;
+}
+
+.skillItems li:not(:last-child)::after {
+  margin-inline: 0.48rem;
+  color: #9499a5;
+  content: "/";
+  font-weight: 400;
+}
+
+.closingGrid > section + section {
+  border-top: 1px solid rgb(23 26 34 / 0.2);
+}
+
+@media (min-width: 1024px) {
+  .closingGrid > section + section {
+    border-top: 0;
+    border-left: 1px solid rgb(23 26 34 / 0.2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contactLink,
+  .inlineLink {
+    transition: none;
+  }
+}
+
+@media print {
+  .cv {
+    min-height: 0 !important;
+    overflow: visible !important;
+    background: #fff !important;
+    color: #111 !important;
+    font-size: 8.4pt;
+    line-height: 1.45;
+    -webkit-print-color-adjust: economy;
+    print-color-adjust: economy;
+  }
+
+  .toolbar {
+    display: none !important;
+  }
+
+  .sheet {
+    width: 100% !important;
+    max-width: none !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: #fff !important;
+    box-shadow: none !important;
+    color: #111 !important;
+  }
+
+  .sheet::before {
+    position: static;
+    display: block;
+    height: 0.6mm;
+    background: #111 !important;
+  }
+
+  .sheet,
+  .sheet * {
+    border-color: #c7c7c7 !important;
+    color: #111 !important;
+    text-shadow: none !important;
+  }
+
+  .masthead > div:first-child {
+    padding: 3mm 0 2.8mm !important;
+  }
+
+  .masthead > div:nth-child(2) {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.4fr) minmax(50mm, 0.6fr) !important;
+    gap: 10mm !important;
+    padding: 9mm 0 10mm !important;
+  }
+
+  .name {
+    max-width: 11ch !important;
+    font-size: 38pt !important;
+    line-height: 0.84 !important;
+  }
+
+  .contacts {
+    font-size: 7.2pt !important;
+  }
+
+  .contacts > div {
+    grid-template-columns: 22mm minmax(0, 1fr) !important;
+    gap: 2mm !important;
+    padding-block: 1.4mm !important;
+  }
+
+  .section {
+    display: grid !important;
+    grid-template-columns: 25mm minmax(0, 1fr) !important;
+    gap: 6mm !important;
+    padding: 8mm 0 !important;
+  }
+
+  .sectionRail {
+    display: block !important;
+  }
+
+  .sectionHeading {
+    margin-top: 2.5mm !important;
+    font-size: 6.5pt !important;
+  }
+
+  .profileLede {
+    font-size: 13.5pt !important;
+    line-height: 1.28 !important;
+  }
+
+  .profileColumns {
+    margin-top: 5mm !important;
+    column-count: 2 !important;
+    column-gap: 7mm !important;
+    font-size: 7.8pt !important;
+    line-height: 1.48 !important;
+  }
+
+  .profileColumns p {
+    margin-bottom: 3mm !important;
+  }
+
+  .entry {
+    display: grid !important;
+    grid-template-columns: 27mm minmax(0, 1fr) !important;
+    gap: 5mm !important;
+    padding: 5mm 0 !important;
+  }
+
+  .entrySide {
+    display: block !important;
+  }
+
+  .metaList {
+    margin-top: 2.5mm !important;
+    font-size: 6.4pt !important;
+    line-height: 1.35 !important;
+  }
+
+  .role {
+    font-size: 16pt !important;
+    line-height: 1 !important;
+  }
+
+  .organization {
+    margin-top: 1.2mm !important;
+    font-size: 7.4pt !important;
+    line-height: 1.35 !important;
+  }
+
+  .entryBody {
+    margin-top: 2.7mm !important;
+    font-size: 7.8pt !important;
+    line-height: 1.48 !important;
+  }
+
+  .entryBody p {
+    margin-top: 2mm !important;
+  }
+
+  .bulletList {
+    margin-top: 2.5mm !important;
+  }
+
+  .bulletList li {
+    grid-template-columns: 3mm minmax(0, 1fr) !important;
+    gap: 1mm !important;
+    margin-top: 1.2mm !important;
+  }
+
+  .closingGrid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  .compactSection {
+    display: block !important;
+    padding: 7mm 0 !important;
+  }
+
+  .compactSection + .compactSection {
+    padding-left: 8mm !important;
+  }
+
+  .compactSection > div {
+    margin-top: 4mm !important;
+  }
+
+  .compactEntry {
+    padding-block: 4mm !important;
+  }
+
+  .skillsGrid > div {
+    padding: 4mm !important;
+  }
+
+  .skillItems {
+    margin-top: 2mm !important;
+    font-size: 7.5pt !important;
+    line-height: 1.55 !important;
+  }
+
+  .contactLink,
+  .inlineLink {
+    color: #111 !important;
+    text-decoration-line: underline !important;
+  }
+
+  .cv code {
+    border-color: #aaa !important;
+    background: transparent !important;
+  }
+}

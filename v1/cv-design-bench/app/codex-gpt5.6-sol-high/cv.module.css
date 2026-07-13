@@ -1,0 +1,127 @@
+.cv {
+  --cv-ink: #172523;
+  --cv-green: #123a37;
+  --cv-paper: #f6f1e7;
+  --cv-gold: #f2c14e;
+  color: var(--cv-ink);
+  font-family: var(--font-cv-sans), sans-serif;
+}
+
+.cv ::selection {
+  color: #102c2b;
+  background: #f2c14e;
+}
+
+.serif {
+  font-family: var(--font-cv-serif), serif;
+}
+
+@page {
+  size: A4 portrait;
+  margin: 11mm 12mm 12mm;
+}
+
+@media print {
+  .cv {
+    --cv-ink: #111;
+    --cv-green: #fff;
+    --cv-paper: #fff;
+    --cv-gold: #111;
+    min-height: auto !important;
+    color: #111 !important;
+    background: #fff !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .sheet {
+    display: grid !important;
+    grid-template-columns: 49mm minmax(0, 1fr) !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    background: #fff !important;
+  }
+
+  .rail {
+    padding: 0 7mm 0 0 !important;
+    color: #111 !important;
+    background: #fff !important;
+    border-right: 0.35mm solid #111 !important;
+  }
+
+  .rail * {
+    color: #111 !important;
+    border-color: #aaa !important;
+  }
+
+  .main {
+    padding: 0 0 0 8mm !important;
+  }
+
+  .hero {
+    padding: 0 0 7mm !important;
+    border-bottom: 0.35mm solid #111 !important;
+  }
+
+  .hero h1 {
+    max-width: none !important;
+    font-size: 36pt !important;
+    line-height: 0.85 !important;
+    letter-spacing: -0.055em !important;
+  }
+
+  .profileGrid {
+    display: block !important;
+  }
+
+  .profileBody {
+    columns: 2;
+    column-gap: 6mm;
+    font-size: 7.1pt !important;
+    line-height: 1.42 !important;
+  }
+
+  .profileBody p {
+    break-inside: avoid;
+    margin-bottom: 2.4mm !important;
+  }
+
+  .entry {
+    grid-template-columns: 29mm minmax(0, 1fr) !important;
+    gap: 5mm !important;
+    padding: 3.8mm 0 !important;
+    break-inside: avoid-page;
+  }
+
+  .entry p,
+  .entry li {
+    font-size: 7.2pt !important;
+    line-height: 1.4 !important;
+  }
+
+  .entry h3 {
+    font-size: 12pt !important;
+    line-height: 1 !important;
+  }
+
+  .section {
+    padding-top: 7mm !important;
+  }
+
+  .sectionTitle {
+    margin-bottom: 2mm !important;
+  }
+
+  .bottomGrid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  .cv a {
+    color: #111 !important;
+    text-decoration-color: #777 !important;
+  }
+}

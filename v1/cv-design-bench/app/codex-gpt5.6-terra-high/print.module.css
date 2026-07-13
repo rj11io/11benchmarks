@@ -1,0 +1,24 @@
+.printRoot {
+  --paper: #fffefa;
+}
+
+@page {
+  size: auto;
+  margin: 12mm 14mm 14mm;
+}
+
+@media print {
+  .printRoot {
+    background: #ffffff !important;
+    color: #000000 !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .printRoot *,
+  .printRoot *::before,
+  .printRoot *::after {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}
