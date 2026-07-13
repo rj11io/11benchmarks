@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/rj11io/11benchmarks/compare/v1.0.0...v1.1.0) (2026-07-13)
+
+
+### Bug Fixes
+
+* refactor cv-design-bench ([71c57ef](https://github.com/rj11io/11benchmarks/commit/71c57ef5a3696da5f3e4e41d69d49e6d7fcb95bf))
+
+
+### Features
+
+* **cv-design-bench:** bench gpt 5.6 ([6bccb46](https://github.com/rj11io/11benchmarks/commit/6bccb46084e13fd39a4d01ae9ff84d157188c922))
+
 # 1.0.0 (2026-07-07)
 
 
