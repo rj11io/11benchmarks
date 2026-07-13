@@ -1,4 +1,4 @@
-# rj11-cv
+# cv-design-bench
 
 A benchmark for how different coding agents design the same thing: a
 personal CV website with a "Download PDF" button (browser print dialog).

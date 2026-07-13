@@ -22,7 +22,7 @@ export default function Page() {
     <div className="flex min-h-svh p-6">
       <div className="flex max-w-md min-w-0 flex-col gap-6 text-sm leading-relaxed">
         <div>
-          <h1 className="font-medium">rj11-cv benchmark</h1>
+          <h1 className="font-medium">cv-design-bench</h1>
           <p className="text-muted-foreground">
             Same CV content, same components, different models. Each run
             lives in its own folder under <code>app/</code>. See{" "}
