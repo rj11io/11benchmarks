@@ -1,0 +1,40 @@
+{
+  "runId": "codex-gpt5.4mini-high",
+  "computedAt": "2026-07-13T11:32:27.534Z",
+  "method": "measured",
+  "kind": "benchmark-run",
+  "harness": "codex",
+  "verification": "42 writes into app/codex-gpt5.4mini-high; kickoff = frozen benchmark prompt",
+  "sources": [
+    "~/.codex/sessions/2026/07/07/rollout-2026-07-07T09-01-56-019f3b99-18c9-7f33-9742-45a8c7ab4e3d.jsonl"
+  ],
+  "byModel": {
+    "gpt-5.4-mini": {
+      "input": 2577418,
+      "cachedInput": 2273664,
+      "output": 40927,
+      "reasoningOutput": 30211,
+      "costUsd": 0.5825118,
+      "ratesUsed": {
+        "per1M": {
+          "input": 0.75,
+          "cachedInput": 0.075,
+          "output": 4.5
+        },
+        "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+        "verifiedAt": "2026-07-13"
+      }
+    }
+  },
+  "totals": {
+    "tokens": 2618345,
+    "costUsd": 0.5825118
+  },
+  "wallTimeMinutes": 14.338083333333334,
+  "cacheHitRate": 0.8821479480627512,
+  "ranAt": "2026-07-07T08:02:11.732Z",
+  "checks": {
+    "harnessReportedUsd": null,
+    "deltaPct": null
+  }
+}

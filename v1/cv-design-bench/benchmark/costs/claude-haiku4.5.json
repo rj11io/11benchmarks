@@ -1,0 +1,42 @@
+{
+  "runId": "claude-haiku4.5",
+  "computedAt": "2026-07-13T11:32:27.575Z",
+  "method": "measured",
+  "kind": "benchmark-run",
+  "harness": "claude-code",
+  "verification": "kickoff = frozen benchmark prompt; Write tool calls into app/claude-haiku4.5/ (layout.tsx, styles.css, ...)",
+  "sources": [
+    "~/.claude/projects/-Users-ricardojorge-Desktop-archive-2026-repos-11benchmarks-v1-rj11-cv/0039c50d-2451-453a-8f1e-e96c65f2c4a6.jsonl"
+  ],
+  "byModel": {
+    "claude-haiku-4-5-20251001": {
+      "input": 1027,
+      "cacheWrite": 83419,
+      "cacheRead": 4216647,
+      "output": 25784,
+      "costUsd": 0.65588545,
+      "ratesUsed": {
+        "per1M": {
+          "input": 1,
+          "output": 5,
+          "cacheWrite5m": 1.25,
+          "cacheWrite1h": 2,
+          "cacheRead": 0.1
+        },
+        "sourceUrl": "https://platform.claude.com/docs/en/pricing",
+        "verifiedAt": "2026-07-13"
+      }
+    }
+  },
+  "totals": {
+    "tokens": 4326877,
+    "costUsd": 0.65588545
+  },
+  "wallTimeMinutes": 8.868583333333333,
+  "cacheHitRate": 0.9803663859395739,
+  "ranAt": "2026-07-07T07:42:36.116Z",
+  "checks": {
+    "harnessReportedUsd": null,
+    "deltaPct": null
+  }
+}

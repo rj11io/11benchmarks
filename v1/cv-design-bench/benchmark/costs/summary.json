@@ -1,69 +1,134 @@
 {
-  "computedAt": "2026-07-13T11:21:46.184699+00:00",
+  "computedAt": "2026-07-13T11:32:27.620Z",
   "runs": {
-    "claude-fable5-high": {
-      "costUsd": 1.6558,
-      "tokens": 730253,
+    "codex-gpt5.5-high": {
+      "costUsd": 2.9931,
+      "tokens": 2759834,
       "kind": "benchmark-run",
-      "cacheHitRate": 0.9374,
-      "wallTimeMinutes": 3.5,
-      "method": "measured"
+      "harness": "codex",
+      "cacheHitRate": 0.9103,
+      "wallTimeMinutes": 10,
+      "method": "measured",
+      "ranAt": "2026-07-07T07:59:59.398Z"
+    },
+    "codex-gpt5.4-high": {
+      "costUsd": 2.9855,
+      "tokens": 6472336,
+      "kind": "benchmark-run",
+      "harness": "codex",
+      "cacheHitRate": 0.9388,
+      "wallTimeMinutes": 14.4,
+      "method": "measured",
+      "ranAt": "2026-07-07T08:00:46.917Z"
+    },
+    "codex-gpt5.4mini-high": {
+      "costUsd": 0.5825,
+      "tokens": 2618345,
+      "kind": "benchmark-run",
+      "harness": "codex",
+      "cacheHitRate": 0.8821,
+      "wallTimeMinutes": 14.3,
+      "method": "measured",
+      "ranAt": "2026-07-07T08:02:11.732Z"
     },
     "codex-gpt5.6-sol-high": {
       "costUsd": 2.2908,
       "tokens": 2088582,
       "kind": "benchmark-run",
+      "harness": "codex",
       "cacheHitRate": 0.9243,
-      "wallTimeMinutes": 8.9,
-      "method": "measured"
+      "wallTimeMinutes": 8.5,
+      "method": "measured",
+      "ranAt": "2026-07-13T10:43:58.801Z"
     },
     "codex-gpt5.6-terra-high": {
       "costUsd": 1.1056,
       "tokens": 1534557,
       "kind": "benchmark-run",
+      "harness": "codex",
       "cacheHitRate": 0.8362,
-      "wallTimeMinutes": 4.6,
-      "method": "measured"
+      "wallTimeMinutes": 4.4,
+      "method": "measured",
+      "ranAt": "2026-07-13T10:45:20.905Z"
     },
     "codex-gpt5.6luna-high": {
       "costUsd": 0.4004,
       "tokens": 1536959,
       "kind": "benchmark-run",
+      "harness": "codex",
       "cacheHitRate": 0.8905,
-      "wallTimeMinutes": 6.2,
-      "method": "measured"
+      "wallTimeMinutes": 6,
+      "method": "measured",
+      "ranAt": "2026-07-13T10:45:55.045Z"
     },
-    "cross-run-review": {
+    "codex-gpt5.6-sol-ultra-fast": {
       "costUsd": 7.2076,
       "tokens": 7200838,
-      "kind": "post-run-review",
+      "kind": "benchmark-run",
+      "harness": "codex",
       "cacheHitRate": 0.9338,
-      "wallTimeMinutes": 24.6,
-      "method": "measured"
+      "wallTimeMinutes": 24.3,
+      "method": "measured",
+      "ranAt": "2026-07-13T10:55:24.222Z"
+    },
+    "claude-haiku4.5": {
+      "costUsd": 0.6559,
+      "tokens": 4326877,
+      "kind": "benchmark-run",
+      "harness": "claude-code",
+      "cacheHitRate": 0.9804,
+      "wallTimeMinutes": 8.9,
+      "method": "measured",
+      "ranAt": "2026-07-07T07:42:36.116Z"
+    },
+    "claude-opus4.8-high": {
+      "costUsd": 4.8675,
+      "tokens": 5343077,
+      "kind": "benchmark-run",
+      "harness": "claude-code",
+      "cacheHitRate": 0.9566,
+      "wallTimeMinutes": 16.5,
+      "method": "measured",
+      "ranAt": "2026-07-07T07:40:11.100Z"
+    },
+    "claude-sonnet5-high": {
+      "costUsd": 4.5105,
+      "tokens": 15343819,
+      "kind": "benchmark-run",
+      "harness": "claude-code",
+      "cacheHitRate": 0.98,
+      "wallTimeMinutes": 22.3,
+      "method": "measured",
+      "ranAt": "2026-07-07T07:41:22.374Z"
+    },
+    "claude-fable5-high": {
+      "costUsd": 12.2247,
+      "tokens": 6953064,
+      "kind": "benchmark-run",
+      "harness": "claude-code",
+      "cacheHitRate": 0.9743,
+      "wallTimeMinutes": 24.1,
+      "method": "measured",
+      "ranAt": "2026-07-07T07:39:07.061Z"
     },
     "repo-conversations": {
-      "costUsd": 2.0152,
-      "tokens": 209498,
+      "costUsd": 5.6881,
+      "tokens": 2029547,
       "kind": "repo-conversations",
-      "cacheHitRate": 0.3883,
-      "wallTimeMinutes": 100.0,
-      "method": "measured"
+      "harness": "claude-code",
+      "cacheHitRate": 0.865,
+      "wallTimeMinutes": null,
+      "method": "measured",
+      "ranAt": "2026-07-09T11:13:57.995Z"
     }
   },
-  "unmeasured": {
-    "runs": [
-      "claude-haiku4.5",
-      "claude-opus4.8-high",
-      "claude-sonnet5-high",
-      "codex-gpt5.4-high",
-      "codex-gpt5.4mini-high",
-      "codex-gpt5.5-high",
-      "codex-gpt5.6-sol-ultra-fast"
-    ],
-    "reason": "no session transcripts found on this machine (searched ~/.claude/projects and ~/.codex/sessions); likely run on another machine or cloud. Provide harness-reported totals to record them as method=reported."
-  },
   "totals": {
-    "costUsd": 14.6754,
-    "tokens": 13300687
-  }
+    "costUsd": 45.512,
+    "tokens": 58207835
+  },
+  "notes": [
+    "Attribution verified by kickoff prompt + file writes into each run folder.",
+    "Session e8e5417a (the benchmark-operations chat thread, still open) is deliberately excluded.",
+    "claude-sonnet5-high priced at Sonnet 5 intro rates ($2/$10, valid through 2026-08-31)."
+  ]
 }

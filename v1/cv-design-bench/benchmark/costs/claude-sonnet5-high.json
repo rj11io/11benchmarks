@@ -1,0 +1,43 @@
+{
+  "runId": "claude-sonnet5-high",
+  "computedAt": "2026-07-13T11:32:27.597Z",
+  "method": "measured",
+  "kind": "benchmark-run",
+  "harness": "claude-code",
+  "verification": "kickoff = frozen benchmark prompt; 53 references to app/claude-sonnet5-high",
+  "sources": [
+    "~/.claude/projects/-Users-ricardojorge-Desktop-archive-2026-repos-11benchmarks-v1-rj11-cv/b1bb177a-c728-429d-b817-337f2d90bb2d.jsonl"
+  ],
+  "byModel": {
+    "claude-sonnet-5": {
+      "input": 17755,
+      "cacheWrite": 287612,
+      "cacheRead": 14962102,
+      "output": 76350,
+      "costUsd": 4.5104603999999995,
+      "ratesUsed": {
+        "per1M": {
+          "input": 2,
+          "output": 10,
+          "cacheWrite5m": 2.5,
+          "cacheWrite1h": 4,
+          "cacheRead": 0.2
+        },
+        "sourceUrl": "https://platform.claude.com/docs/en/pricing",
+        "verifiedAt": "2026-07-13",
+        "notes": "intro pricing through 2026-08-31; standard is $3/$15"
+      }
+    }
+  },
+  "totals": {
+    "tokens": 15343819,
+    "costUsd": 4.5104603999999995
+  },
+  "wallTimeMinutes": 22.32496666666667,
+  "cacheHitRate": 0.979998845912181,
+  "ranAt": "2026-07-07T07:41:22.374Z",
+  "checks": {
+    "harnessReportedUsd": null,
+    "deltaPct": null
+  }
+}

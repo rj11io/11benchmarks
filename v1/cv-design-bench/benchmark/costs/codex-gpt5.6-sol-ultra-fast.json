@@ -1,8 +1,10 @@
 {
-  "runId": "cross-run-review",
-  "computedAt": "2026-07-13T11:15:53.060Z",
+  "runId": "codex-gpt5.6-sol-ultra-fast",
+  "computedAt": "2026-07-13T11:32:27.573Z",
   "method": "measured",
-  "kind": "post-run-review",
+  "kind": "benchmark-run",
+  "harness": "codex",
+  "verification": "main session has 26 writes into app/codex-gpt5.6-sol-ultra-fast; 3 helper sessions spawned seconds apart each write into the same folder; page.tsx mtime falls inside session span",
   "sources": [
     "~/.codex/sessions/2026/07/13/rollout-2026-07-13T11-55-04-019f5b1d-c035-77f3-b18d-2011ad4994c7.jsonl",
     "~/.codex/sessions/2026/07/13/rollout-2026-07-13T11-55-38-019f5b1e-4464-7a51-bdb7-cb91b455b5c1.jsonl",
@@ -31,8 +33,9 @@
     "tokens": 7200838,
     "costUsd": 7.207573999999999
   },
-  "wallTimeMinutes": 24.601633333333332,
+  "wallTimeMinutes": 24.265,
   "cacheHitRate": 0.9337766218539525,
+  "ranAt": "2026-07-13T10:55:24.222Z",
   "checks": {
     "harnessReportedUsd": null,
     "deltaPct": null

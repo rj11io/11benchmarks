@@ -1,8 +1,10 @@
 {
   "runId": "codex-gpt5.6luna-high",
-  "computedAt": "2026-07-13T11:15:53.060Z",
+  "computedAt": "2026-07-13T11:32:27.556Z",
   "method": "measured",
   "kind": "benchmark-run",
+  "harness": "codex",
+  "verification": "30 references to app/codex-gpt5.6luna-high, sole dominant folder",
   "sources": [
     "~/.codex/sessions/2026/07/13/rollout-2026-07-13T11-45-39-019f5b15-2111-7991-8084-43ca032ffbc7.jsonl"
   ],
@@ -28,8 +30,9 @@
     "tokens": 1536959,
     "costUsd": 0.4004184
   },
-  "wallTimeMinutes": 6.2340333333333335,
+  "wallTimeMinutes": 5.970566666666667,
   "cacheHitRate": 0.8904567426260235,
+  "ranAt": "2026-07-13T10:45:55.045Z",
   "checks": {
     "harnessReportedUsd": null,
     "deltaPct": null

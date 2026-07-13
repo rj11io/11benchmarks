@@ -1,8 +1,10 @@
 {
   "runId": "codex-gpt5.6-terra-high",
-  "computedAt": "2026-07-13T11:15:53.060Z",
+  "computedAt": "2026-07-13T11:32:27.548Z",
   "method": "measured",
   "kind": "benchmark-run",
+  "harness": "codex",
+  "verification": "25 references to app/codex-gpt5.6-terra-high, sole dominant folder",
   "sources": [
     "~/.codex/sessions/2026/07/13/rollout-2026-07-13T11-45-06-019f5b14-a148-7741-857d-6b20bcce1c51.jsonl"
   ],
@@ -28,8 +30,9 @@
     "tokens": 1534557,
     "costUsd": 1.105578
   },
-  "wallTimeMinutes": 4.6081666666666665,
+  "wallTimeMinutes": 4.3684666666666665,
   "cacheHitRate": 0.8362059799879502,
+  "ranAt": "2026-07-13T10:45:20.905Z",
   "checks": {
     "harnessReportedUsd": null,
     "deltaPct": null

@@ -1,0 +1,42 @@
+{
+  "runId": "claude-opus4.8-high",
+  "computedAt": "2026-07-13T11:32:27.582Z",
+  "method": "measured",
+  "kind": "benchmark-run",
+  "harness": "claude-code",
+  "verification": "kickoff = frozen benchmark prompt; 22 references to app/claude-opus4.8-high",
+  "sources": [
+    "~/.claude/projects/-Users-ricardojorge-Desktop-archive-2026-repos-11benchmarks-v1-rj11-cv/44e1bace-2e1c-4f4d-9967-6e558421963d.jsonl"
+  ],
+  "byModel": {
+    "claude-opus-4-8": {
+      "input": 16061,
+      "cacheWrite": 214184,
+      "cacheRead": 5076419,
+      "output": 36413,
+      "costUsd": 4.867489499999999,
+      "ratesUsed": {
+        "per1M": {
+          "input": 5,
+          "output": 25,
+          "cacheWrite5m": 6.25,
+          "cacheWrite1h": 10,
+          "cacheRead": 0.5
+        },
+        "sourceUrl": "https://platform.claude.com/docs/en/pricing",
+        "verifiedAt": "2026-07-13"
+      }
+    }
+  },
+  "totals": {
+    "tokens": 5343077,
+    "costUsd": 4.867489499999999
+  },
+  "wallTimeMinutes": 16.451583333333332,
+  "cacheHitRate": 0.9566121013126138,
+  "ranAt": "2026-07-07T07:40:11.100Z",
+  "checks": {
+    "harnessReportedUsd": null,
+    "deltaPct": null
+  }
+}

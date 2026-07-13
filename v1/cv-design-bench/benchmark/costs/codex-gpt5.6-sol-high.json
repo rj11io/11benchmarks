@@ -1,8 +1,10 @@
 {
   "runId": "codex-gpt5.6-sol-high",
-  "computedAt": "2026-07-13T11:15:53.060Z",
+  "computedAt": "2026-07-13T11:32:27.543Z",
   "method": "measured",
   "kind": "benchmark-run",
+  "harness": "codex",
+  "verification": "44 references to app/codex-gpt5.6-sol-high, sole dominant folder",
   "sources": [
     "~/.codex/sessions/2026/07/13/rollout-2026-07-13T11-43-36-019f5b13-42c7-7ba3-86ba-1f5d06e960f5.jsonl"
   ],
@@ -28,8 +30,9 @@
     "tokens": 2088582,
     "costUsd": 2.29081
   },
-  "wallTimeMinutes": 8.910533333333333,
+  "wallTimeMinutes": 8.54365,
   "cacheHitRate": 0.9243470977452616,
+  "ranAt": "2026-07-13T10:43:58.801Z",
   "checks": {
     "harnessReportedUsd": null,
     "deltaPct": null

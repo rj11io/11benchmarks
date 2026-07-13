@@ -1,19 +1,27 @@
 {
   "runId": "repo-conversations",
-  "computedAt": "2026-07-13T11:21:19.305Z",
+  "computedAt": "2026-07-13T11:32:27.619Z",
   "method": "measured",
   "kind": "repo-conversations",
+  "harness": "claude-code",
+  "verification": "kickoffs are chat ('review the cv content...', 'i asked...') — NOT the benchmark prompt; excluded from run costs. Resumed/renamed forks deduped by message id.",
   "sources": [
-    "~/.claude/projects/.../69336d12*.jsonl",
-    "~/.claude/projects/.../81b42ed6*.jsonl"
+    "~/.claude/projects/-Users-ricardojorge-Desktop-archive-2026-repos-11benchmarks-v1-rj11-cv/161997b5-f50a-49c5-93e6-f60568af50dd.jsonl",
+    "~/.claude/projects/-Users-ricardojorge-Desktop-archive-2026-repos-11benchmarks-v1-rj11-cv/30179ebf-2dc9-41b7-81f5-ad0cb3cfd1ce.jsonl",
+    "~/.claude/projects/-Users-ricardojorge-Desktop-archive-2026-repos-11benchmarks-v1-rj11-cv/8f374ffe-1999-4b87-8b87-1f1708602cae.jsonl",
+    "~/.claude/projects/-Users-ricardojorge-Desktop-archive-2026-repos-11benchmarks-v1-rj11-cv/d9896103-c42f-44f5-a385-1bcc06eeb3f9.jsonl",
+    "~/.claude/projects/-Users-ricardojorge-Desktop-archive-2026-repos-11benchmarks-v1-cv-design-bench/69336d12-2451-4f6d-aef4-a66e5da40afb.jsonl",
+    "~/.claude/projects/-Users-ricardojorge-Desktop-archive-2026-repos-11benchmarks-v1-cv-design-bench/81b42ed6-3b96-4880-8da4-d31e7055b1ac.jsonl",
+    "~/.claude/projects/-Users-ricardojorge-Desktop-archive-2026-repos-11benchmarks-v1-cv-design-bench/0c03c3cc-df98-4995-8996-0ee4ac4d1c40.jsonl",
+    "~/.claude/projects/-Users-ricardojorge-Desktop-archive-2026-repos-11benchmarks-v1-cv-design-bench/5e8b2cd6-c17f-49b2-a28d-28ff433ad46e.jsonl"
   ],
   "byModel": {
     "claude-fable-5": {
-      "input": 14736,
-      "cacheWrite": 108030,
-      "cacheRead": 77941,
-      "output": 8791,
-      "costUsd": 2.015226,
+      "input": 27682,
+      "cacheWrite": 206564,
+      "cacheRead": 1700499,
+      "output": 21567,
+      "costUsd": 5.6377190000000015,
       "ratesUsed": {
         "per1M": {
           "input": 10,
@@ -25,14 +33,33 @@
         "sourceUrl": "https://platform.claude.com/docs/en/pricing",
         "verifiedAt": "2026-07-13"
       }
+    },
+    "claude-haiku-4-5-20251001": {
+      "input": 18,
+      "cacheWrite": 36732,
+      "cacheRead": 36331,
+      "output": 154,
+      "costUsd": 0.0503361,
+      "ratesUsed": {
+        "per1M": {
+          "input": 1,
+          "output": 5,
+          "cacheWrite5m": 1.25,
+          "cacheWrite1h": 2,
+          "cacheRead": 0.1
+        },
+        "sourceUrl": "https://platform.claude.com/docs/en/pricing",
+        "verifiedAt": "2026-07-13"
+      }
     }
   },
   "totals": {
-    "tokens": 209498,
-    "costUsd": 2.015226
+    "tokens": 2029547,
+    "costUsd": 5.6880551000000015
   },
-  "wallTimeMinutes": 100.04536666666667,
-  "cacheHitRate": 0.38833224551211465,
+  "wallTimeMinutes": null,
+  "cacheHitRate": 0.8650301370736309,
+  "ranAt": "2026-07-09T11:13:57.995Z",
   "checks": {
     "harnessReportedUsd": null,
     "deltaPct": null

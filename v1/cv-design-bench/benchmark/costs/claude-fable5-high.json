@@ -1,19 +1,20 @@
 {
   "runId": "claude-fable5-high",
-  "computedAt": "2026-07-13T11:21:19.304Z",
+  "computedAt": "2026-07-13T11:32:27.616Z",
   "method": "measured",
   "kind": "benchmark-run",
+  "harness": "claude-code",
+  "verification": "kickoff = frozen benchmark prompt; 58 references to app/claude-fable5-high",
   "sources": [
-    "~/.claude/projects/.../0c03c3cc*.jsonl",
-    "~/.claude/projects/.../5e8b2cd6*.jsonl"
+    "~/.claude/projects/-Users-ricardojorge-Desktop-archive-2026-repos-11benchmarks-v1-rj11-cv/b849be2d-ee07-461f-8103-69d3aca0d284.jsonl"
   ],
   "byModel": {
     "claude-fable-5": {
-      "input": 12284,
-      "cacheWrite": 32860,
-      "cacheRead": 676189,
-      "output": 8920,
-      "costUsd": 1.655779,
+      "input": 15899,
+      "cacheWrite": 160747,
+      "cacheRead": 6709481,
+      "output": 66937,
+      "costUsd": 12.224658499999999,
       "ratesUsed": {
         "per1M": {
           "input": 10,
@@ -28,11 +29,12 @@
     }
   },
   "totals": {
-    "tokens": 730253,
-    "costUsd": 1.655779
+    "tokens": 6953064,
+    "costUsd": 12.224658499999999
   },
-  "wallTimeMinutes": 3.4726333333333335,
-  "cacheHitRate": 0.9374158675674065,
+  "wallTimeMinutes": 24.083483333333334,
+  "cacheHitRate": 0.9743475541476363,
+  "ranAt": "2026-07-07T07:39:07.061Z",
   "checks": {
     "harnessReportedUsd": null,
     "deltaPct": null
