@@ -1,8 +1,8 @@
 # Education
 
-## Degree Name Placeholder
-school: University of Somewhere
-period: 2012 — 2015
+## IT Systems Management and Programming
+school: Escola Profissional de Tecnologia Digital
+period: 2013 — 2016
 location: Lisbon, Portugal
 
-Optional line about thesis, honors, or focus area.
+Técnico de Gestão e Programação de Sistemas Informáticos

@@ -10,7 +10,7 @@ top online ladders and win local LAN tournaments, which turns out to be manageme
 training in disguise: recruiting, coaching, and keeping a roster of remote
 hyperactive teenagers aligned and motivated on the same strategy and goal.
 
-I started working in software professionally in 2014 where I very quickly specialized in frontend Typescript applications and was an early adopter of React.js (2016) and Next.js (2018), in a time where nobody was hiring for these technologies I had the foresight to bet on what would eventually become the standard language of the web and AI engineering.
+I started working in software professionally in 2015 where I very quickly specialized in frontend Typescript applications and was an early adopter of React.js (2016) and Next.js (2018), in a time where nobody was hiring for these technologies I had the foresight to bet on what would eventually become the standard language of the web and AI engineering.
 
 I was the first frontend hire for the majority of the projects that I worked on, meaning I was also responsible for the fundamental architecture, tooling, component library, infrastructure, environments, workflows, and pipelines for anything I was asked to build. I was also often responsible for growing the team, onboarding and managing the new members, and creating the playbooks for them to integrate and contribute to the project seamlessly.
 

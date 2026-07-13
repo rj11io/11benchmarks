@@ -2,7 +2,7 @@ Hi, I'm Ricardo Jorge, but you can call me RJ. I'm an AI Product Engineer who st
 
 Competitive gaming taught me the rest. I led teams, guilds, and clans to the top of online ladders and to LAN tournament wins, which turned out to be management training in disguise: recruiting, coaching, and keeping a roster of hyperactive remote teenagers aligned on one strategy.
 
-I went professional in 2014 and quickly specialized in frontend TypeScript applications, building on React since 2016 and Next.js since 2018. It was a bet on the stack that became the standard for both the web and AI products.
+I went professional in 2015 and quickly specialized in frontend TypeScript applications, building on React since 2016 and Next.js since 2018. It was a bet on the stack that became the standard for both the web and AI products.
 
 On most projects I was the first frontend hire, which meant owning the architecture, tooling, component library, infrastructure, and pipelines from day one. It also meant growing the team: hiring, onboarding, and writing the playbooks that let new engineers integrate seamlessly.
 

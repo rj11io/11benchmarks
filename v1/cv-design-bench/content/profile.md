@@ -21,9 +21,8 @@ top of online ladders and to LAN tournament wins, which turned out to be
 management training in disguise: recruiting, coaching, and keeping a roster
 of hyperactive remote teenagers aligned on one strategy.
 
-I went professional in 2014 and quickly specialized in frontend TypeScript
-applications, building on React since 2016 and Next.js since 2018. It was a
-bet on the stack that became the standard for both the web and AI products.
+I went professional in 2015 and quickly specialized in frontend TypeScript
+applications, building on React since 2016 and Next.js since 2018. It was an early bet on the stack that became the standard for both the web and AI products.
 
 On most projects I was the first frontend hire, which meant owning the
 architecture, tooling, component library, infrastructure, and pipelines from

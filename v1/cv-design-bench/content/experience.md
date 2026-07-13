@@ -6,17 +6,17 @@ period: Mar 2025 — Present
 location: B2B · Remote
 url: https://www.rj11.io
 
-Hands-on product engineering mercenary for multiple early-stage startups,
-building projects from the ground up:
+Hands-on product engineering mercenary for multiple early-stage startups, building projects from the ground up:
 
-- AI data extraction from PDFs
-- AI SEO analytics
-- Dermatopathology portal
-- Real estate platform
-- Multiple cybersecurity dashboards
-- Multiple proprietary data explorers
-- Multiple AI chats / GPT experiences
-- AI smart scraping agents
+- AI Data Extraction from PDFs
+- AI SEO Analytics
+- Dermatopathology Portal
+- Real Estate Platform
+- Multiple Cybersecurity Dashboards
+- Multiple Proprietary Data Explorers
+- Multiple AI Chats / GPT Experiences
+- AI Smart Scrapping Agents
+- AI Agent Harnesses, Skills, and Automations
 
 ## Product / Datavis Engineer
 company: Hunt Intelligence, Inc.
@@ -33,7 +33,7 @@ location: B2B · Remote
   raw `openapi.json` with metadata and shipped a UI friendlier and more
   intuitive than Swagger
 
-## Frontend Team Lead
+## Senior Frontend Team Lead
 company: OMEGA Systems
 period: Jan 2024 — Apr 2024
 location: Remote
