@@ -1,0 +1,159 @@
+# Experience
+
+## AI Product Engineer
+company: rj11io
+period: Mar 2025 — Present
+location: B2B · Remote
+url: https://www.rj11.io
+
+Hands-on AI product engineering for multiple early-stage startups, building projects from the ground up:
+
+- AI Data Extraction from PDFs
+- AI SEO Analytics
+- GenAI Dermatopathology Portal
+- Real Estate Platform
+- Multiple Cybersecurity Dashboards
+- Multiple Proprietary Data Explorers
+- Multiple AI Chats / GPT Experiences
+- AI Smart Scrapping Agents
+- AI Agent Harnesses, Skills, and Automations
+
+## Product / Datavis Engineer
+company: Hunt Intelligence, Inc.
+period: Apr 2024 — Mar 2025
+location: B2B · Remote
+url: https://hunt.io/
+
+Left OMEGA to go deep on my specialty, data visualisation for a
+threat-intelligence product:
+
+- Built a modern TypeScript codebase with the latest Next.js and shadcn/ui,
+  production and staging environments on Vercel, end-to-end tests with
+  Playwright, CI/CD on GitHub Actions, and automated release changelogs
+  hooked up to Slack
+- Built custom data visualisation components like the IP History Widget
+- Built core product modules like AttackCapture™ and HuntSQL™
+- Built a new API documentation platform on top of OpenAPI: enriched the
+  raw `openapi.json` with metadata and shipped a UI friendlier and more
+  intuitive than Swagger
+
+## Senior Frontend Engineer → Team Lead
+company: OMEGA Systems
+period: Jun 2023 — Apr 2024
+location: Remote
+url: https://www.omegasys.eu/
+
+Joined to build the next generation of OMEGA's iGaming platform management
+system (CORE5) with TypeScript and React. Promoted to lead the frontend
+team.
+
+- Data visualisation for the Main and Social dashboards, plus report and
+  configuration views (Cashback, Refer-a-Friend, Pending Withdrawals,
+  Challenges / Leaderboards)
+- Built the localisation / internationalisation module and an internal
+  "Tab System" UI
+- As lead: built the "New Developer" onboarding experience, set standards
+  for tickets, documentation, and remote / async workflows, with strong
+  emphasis on the "Definition of Done"
+- Gave weekly "TED" talks to bring the whole team up to speed on technology and product
+- Kept shipping: product-engineered new features from scratch, end to end
+
+## Senior Frontend Engineer
+company: Phantasma Chain
+period: Jan 2022 — May 2023
+location: Remote
+url: https://phantasma.info/
+
+- Built a frontend monorepo for all the new tools and apps
+- Designed and developed the Phantasma UI Storybook
+- Built Phantasma Explorer
+- Tests with Playwright, CI with GitHub Actions, CD with Vercel
+- Contributed improvements to the Phantasma TypeScript SDK
+- Built in-house tools: a custom React hook for the Phantasma SDK,
+  localisation, white-label theming, environment configs, and a custom
+  API / scripts / hooks module
+
+## Frontend Lead
+company: BinaryEdge · Coalition, Inc.
+period: Feb 2020 — Oct 2021
+location: Remote
+url: https://www.coalitioninc.com/
+
+Frontend Engineer and Tech Lead for BinaryEdge and Coalition's Customer
+Security team. Started as a solo frontend engineer and grew a team focused
+on customer-facing security apps and internal tools. Introduced React,
+TypeScript, Material-UI, Nivo, and Next.js to the frontend stack, plus the
+concept of micro frontends.
+
+- Attack Surface Monitoring (ASM) on the BinaryEdge Portal as a micro
+  frontend, later integrated into Coalition Explorer and Coalition Control
+- Tech Lead for Coalition Explorer and the more ambitious Coalition
+  Explorer 2.0, housing critical internal tools for the whole company
+- Claims management, report generation, security review, and Executive
+  Risks platforms inside Coalition Explorer
+- Tech Lead for the Coalition Storybook, the Customer Security Web UI
+  component library, and data visualisations
+- Tech Lead for the RSA and Security Week marketing pages
+- Migrated the frontend CI/CD from Drone to GitHub Actions, improving
+  pipelines, environments, and developer experience
+
+## Fullstack Engineer, Co-Founder
+company: Glaiveware
+period: Mar 2018 — Dec 2019
+location: Lisbon, Portugal · Remote
+
+A great learning experience that taught me how to manage projects and run
+a business creating bespoke web apps above market standards.
+
+- JavaScript and TypeScript: React, Redux, Redux-Saga, Next.js, Node.js,
+  Express
+- Material-UI, HTML5 + CSS3 (Bootstrap 4, SASS)
+- Databases: MongoDB, Firebase, MySQL, SQLite
+- Infrastructure: AWS (EC2, S3, SES, API Gateway, Lambda), Ubuntu, nginx
+- Beyond code: SEO & SEM, branding & design, marketing & advertising,
+  copywriting & content management
+
+## React Native Developer
+company: Sycret.ink
+period: Jan 2017 — Dec 2017
+location: Neuchâtel, Switzerland · Remote
+
+Mobile chat app with end-to-end encryption in a serverless environment,
+developed under contract with a team of three. Learned a lot about
+encryption protocols and mobile app deployment.
+
+- React Native, libsignal-protocol, Android Studio
+- AWS (API Gateway, Lambda), SQLite
+
+## Full Stack JavaScript Developer
+company: American Heart Association
+period: Sep 2016 — Nov 2016
+location: Remote
+
+Built an admin dashboard for the AHA's Kinect integration: interfaced
+users with the collected data, connected doctors and their patients,
+printed reports, and let superusers manage the whole system. Acquired
+through a university scholarship with free choice of technology, so I built my
+first web app as a full-stack JavaScript developer, using React and Node.
+
+## Frontend Developer
+company: NextBitt
+period: Oct 2015 — Jul 2016
+location: Lisbon, Portugal
+
+Created analytics dashboards and reporting, auditing, and management
+tools for NextBitt's asset & facilities management software.
+
+- JavaScript (jQuery, Angular.js), .NET (C#, MVC), HTML5 + CSS3
+- Heavy date/time logic (Moment.js, date pickers) and data visualisation
+  (Google Charts, dygraphs, Chart.js, d3.js, C3.js, and more)
+
+## Java Developer
+company: Science4you
+period: Jan 2015 — Mar 2015
+location: Lisbon, Portugal
+
+Internship. Built a management system for the online store using Java and
+MySQL. What started as a simple display-and-print tool for the back
+office evolved into a full application managing orders, printing detailed
+reports, and sending automated emails to customers. Which all were previously done by hand.
