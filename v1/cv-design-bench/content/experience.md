@@ -22,6 +22,7 @@ Hands-on AI product engineering for multiple early-stage startups, building proj
 company: Hunt Intelligence, Inc.
 period: Apr 2024 — Mar 2025
 location: B2B · Remote
+url: https://hunt.io/
 
 Left OMEGA to go deep on my specialty, data visualisation for a
 threat-intelligence product:
@@ -40,6 +41,7 @@ threat-intelligence product:
 company: OMEGA Systems
 period: Jun 2023 — Apr 2024
 location: Remote
+url: https://www.omegasys.eu/
 
 Joined to build the next generation of OMEGA's iGaming platform management
 system (CORE5) with TypeScript and React. Promoted to lead the frontend
@@ -60,10 +62,11 @@ team.
 company: Phantasma Chain
 period: Jan 2022 — May 2023
 location: Remote
+url: https://phantasma.info/
 
 - Built a frontend monorepo for all the new tools and apps
 - Designed and developed the Phantasma UI Storybook
-- Built [Phantasma Explorer](https://explorer.phantasma.io)
+- Built Phantasma Explorer
 - Tests with Playwright, CI with GitHub Actions, CD with Vercel
 - Contributed improvements to the Phantasma TypeScript SDK
 - Built in-house tools: a custom React hook for the Phantasma SDK,
@@ -74,6 +77,7 @@ location: Remote
 company: BinaryEdge · Coalition, Inc.
 period: Feb 2020 — Oct 2021
 location: Remote
+url: https://www.coalitioninc.com/
 
 Frontend Engineer and Tech Lead for BinaryEdge and Coalition's Customer
 Security team. Started as a solo frontend engineer and grew a team focused
