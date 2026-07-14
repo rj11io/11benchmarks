@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/rj11io/11bench/compare/v1.3.1...v1.4.0) (2026-07-14)
+
+
+### Features
+
+* bench www ([1f119a2](https://github.com/rj11io/11bench/commit/1f119a27d686ac7ea5a2293830ee769d7f28f911))
+
 ## [1.3.1](https://github.com/rj11io/11bench/compare/v1.3.0...v1.3.1) (2026-07-14)
 
 
