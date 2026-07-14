@@ -1,0 +1,25 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "www",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "www", "--", "--port", "3100"],
+      "port": 3100
+    },
+    {
+      "name": "cv-design-bench",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "v1/cv-design-bench",
+        "--",
+        "--port",
+        "3101"
+      ],
+      "port": 3101
+    }
+  ]
+}
