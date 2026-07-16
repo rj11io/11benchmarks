@@ -9,9 +9,9 @@ import { cn } from "@/lib/utils"
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
 export const metadata: Metadata = {
-  title: "Under Maintenance",
+  title: "cv-redesign-bench",
   description:
-    "This website is currently under maintenance and will be back online soon.",
+    "A benchmark for AI-driven CV extraction, research, redesign, and two-page print execution.",
 }
 
 const fontMono = Geist_Mono({

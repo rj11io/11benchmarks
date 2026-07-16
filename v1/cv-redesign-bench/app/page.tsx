@@ -1,48 +1,102 @@
-export default function Page() {
-  return (
-    <main className="flex min-h-svh items-center justify-center bg-background px-6 py-16">
-      <section
-        className="w-full max-w-lg text-center"
-        aria-labelledby="maintenance-title"
-      >
-        <div
-          className="mx-auto mb-8 flex size-14 items-center justify-center rounded-full border border-border bg-muted"
-          aria-hidden="true"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="size-6"
-          >
-            <path d="M12 6V3" />
-            <path d="M16.25 7.75 18.4 5.6" />
-            <path d="M18 12h3" />
-            <path d="m16.25 16.25 2.15 2.15" />
-            <path d="M12 18v3" />
-            <path d="m7.75 16.25-2.15 2.15" />
-            <path d="M6 12H3" />
-            <path d="M7.75 7.75 5.6 5.6" />
-          </svg>
-        </div>
+import fs from "node:fs"
+import path from "node:path"
 
-        <p className="mb-4 text-xs font-semibold tracking-[0.2em] text-muted-foreground uppercase">
-          Scheduled maintenance
-        </p>
-        <h1
-          id="maintenance-title"
-          className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
-        >
-          We&apos;ll be back soon.
-        </h1>
-        <p className="mx-auto mt-5 max-w-md text-base leading-7 text-muted-foreground">
-          This website is currently under maintenance. We&apos;re working to
-          bring it back online as soon as possible.
-        </p>
-      </section>
+export const dynamic = "force-dynamic"
+
+const expectedArtifacts = ["research.md", "content.md", "design.md"] as const
+
+function listRuns() {
+  const appDir = path.join(process.cwd(), "app")
+
+  return fs
+    .readdirSync(appDir, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .filter(
+      (entry) => !entry.name.startsWith("_") && !entry.name.startsWith("(")
+    )
+    .filter((entry) => fs.existsSync(path.join(appDir, entry.name, "page.tsx")))
+    .map((entry) => ({
+      id: entry.name,
+      artifacts: expectedArtifacts.filter((artifact) =>
+        fs.existsSync(path.join(appDir, entry.name, artifact))
+      ),
+    }))
+    .sort((a, b) => a.id.localeCompare(b.id))
+}
+
+export default function Page() {
+  const runs = listRuns()
+
+  return (
+    <main className="min-h-svh bg-background px-5 py-12 text-foreground sm:px-8 sm:py-16">
+      <div className="mx-auto w-full max-w-3xl">
+        <header className="border-b border-border pb-8">
+          <p className="font-mono text-xs text-muted-foreground">
+            11bench / clean suite
+          </p>
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+            cv-redesign-bench
+          </h1>
+          <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">
+            Same PDFs, same baseline, independent extraction and research. Every
+            run must improve the CV and produce an exact two-page A4 print
+            result.
+          </p>
+        </header>
+
+        <section className="py-8">
+          <div className="flex items-end justify-between gap-4">
+            <div>
+              <h2 className="text-lg font-medium">Runs</h2>
+              <p className="mt-1 text-sm text-muted-foreground">
+                A route appears after its run creates a page.
+              </p>
+            </div>
+            <span className="rounded-full border border-border px-2.5 py-1 font-mono text-xs text-muted-foreground">
+              {runs.length}
+            </span>
+          </div>
+
+          {runs.length === 0 ? (
+            <div className="mt-5 rounded-lg border border-dashed border-border p-6 text-sm text-muted-foreground">
+              No runs yet. Prepare the first run from <code>PROMPT.md</code>; do
+              not create candidate folders manually.
+            </div>
+          ) : (
+            <ul className="mt-5 space-y-3">
+              {runs.map((run) => (
+                <li
+                  key={run.id}
+                  className="rounded-lg border border-border p-4"
+                >
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                    <a
+                      href={`/${run.id}`}
+                      className="font-mono text-sm font-medium underline underline-offset-4"
+                    >
+                      {run.id}
+                    </a>
+                    <div className="flex flex-wrap gap-1.5 sm:ml-auto">
+                      {expectedArtifacts.map((artifact) => (
+                        <span
+                          key={artifact}
+                          className={
+                            run.artifacts.includes(artifact)
+                              ? "rounded border border-border bg-muted px-2 py-0.5 font-mono text-[11px]"
+                              : "rounded border border-dashed border-border px-2 py-0.5 font-mono text-[11px] text-muted-foreground"
+                          }
+                        >
+                          {artifact}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      </div>
     </main>
   )
 }

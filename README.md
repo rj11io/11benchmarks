@@ -10,9 +10,16 @@ The current website is deployed at [bench.rj11.io](https://bench.rj11.io/).
 | Path | Purpose |
 | --- | --- |
 | [`www/`](www/) | Current Next.js website for 11bench |
-| [`v1/cv-design-bench/`](v1/cv-design-bench/) | Completed CV design benchmark with 11 model runs and measured costs |
-| [`v1/gh-readme-bench/`](v1/gh-readme-bench/) | Reference content for a GitHub README benchmark |
+| [`v1/cv-design-bench/`](v1/cv-design-bench/) | Historical prototype that informed the benchmark skills; retained with its original runs and costs |
+| [`v1/cv-redesign-bench/`](v1/cv-redesign-bench/) | Clean PDF-to-two-page-CV research, extraction, content, and design benchmark |
+| [`v1/cyber-dashboard-bench/`](v1/cyber-dashboard-bench/) | Clean end-to-end cybersecurity product research, PRD, design, and frontend benchmark |
+| [`v1/crypto-dashboard-bench/`](v1/crypto-dashboard-bench/) | Clean end-to-end crypto product research, PRD, design, and frontend benchmark |
+| [`v1/gh-readme-bench/`](v1/gh-readme-bench/) | Clean PDF-to-GitHub-profile research, extraction, editorial, and creative benchmark |
 | [`v1/_app-boilerplate_/`](v1/_app-boilerplate_/) | Reusable Next.js and shadcn/ui starter for v1 benchmarks |
+
+The four clean benchmarks start with empty run ledgers, frozen rubrics, and
+operator-owned artifact directories. The historical `cv-design-bench` is not a
+clean cohort and should not be mixed into their future aggregate results.
 
 ## Run an app locally
 
@@ -25,8 +32,8 @@ npm install
 npm run dev
 ```
 
-Use `v1/cv-design-bench` or `v1/_app-boilerplate_` instead of `www` to run
-those apps. Their available scripts are the same:
+Use any Next.js benchmark directory or `v1/_app-boilerplate_` instead of
+`www` to run that app. Their available scripts are the same:
 
 | Command | Purpose |
 | --- | --- |

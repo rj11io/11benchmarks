@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "frozenAt": "2026-07-16",
+  "files": [
+    {
+      "path": "ref/RJ_CV.pdf",
+      "pages": 2,
+      "pageSize": "A4",
+      "sha256": "5c9729a1d2c1cbf4b3bff8036f21749c8f28f6c1e49c3cba153a263d0235aef6"
+    },
+    {
+      "path": "ref/RJ_CV_max.pdf",
+      "pages": 6,
+      "pageSize": "A4",
+      "sha256": "b0218f4a1533d1760c2d49dfa24796a4c38d263c20e47afbc1cf867fb009b78f"
+    }
+  ]
+}
