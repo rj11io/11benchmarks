@@ -77,7 +77,7 @@ Specify:
 
 ## Frontend demo
 
-- Create `app/{{RUN_ID}}/layout.tsx` and `app/{{RUN_ID}}/page.tsx`.
+- Create `app/{{RUN_ID}}/layout.tsx` and `app/{{RUN_ID}}/page.tsx`, and any other files you need inside this module to achieve your goals to a high degree of satisfaction and quality.
 - Build a coherent interactive product experience, not a static collage.
 - Use realistic but clearly labeled seeded demo data.
 - Implement the PRD's core workflow. `localStorage` is allowed for persistence.
