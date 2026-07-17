@@ -1,3 +1,17 @@
+# [1.5.0](https://github.com/rj11io/11bench/compare/v1.4.0...v1.5.0) (2026-07-17)
+
+
+### Bug Fixes
+
+* improve prompts ([2fb5b1b](https://github.com/rj11io/11bench/commit/2fb5b1b3fe2362524268a957aecea4e129fee98d))
+
+
+### Features
+
+* bench ([5fc7451](https://github.com/rj11io/11bench/commit/5fc74519165193cd7911d4ed2e9620759e8412d6))
+* init benchmarks ([b06ef93](https://github.com/rj11io/11bench/commit/b06ef932570be33df85cb966487e324d0953d951))
+* init new benches ([57eb2c3](https://github.com/rj11io/11bench/commit/57eb2c3bbcbd4466e3cfd6d93c6d6de792998212))
+
 # [1.4.0](https://github.com/rj11io/11bench/compare/v1.3.1...v1.4.0) (2026-07-14)
 
 
