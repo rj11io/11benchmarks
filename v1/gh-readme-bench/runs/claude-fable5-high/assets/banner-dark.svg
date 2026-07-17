@@ -1,0 +1,26 @@
+<svg width="960" height="210" viewBox="0 0 960 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ricardo Jorge — AI Product Engineer. Lisbon, Portugal. rj11.io">
+  <style>
+    .name { font: 600 56px Georgia, 'Times New Roman', serif; fill: #e6edf3; }
+    .role { font: 600 15px 'Segoe UI', Helvetica, Arial, sans-serif; letter-spacing: 5px; fill: #8b949e; }
+    .mono { font: 13px ui-monospace, 'SF Mono', Menlo, Consolas, monospace; fill: #8b949e; }
+    .spark { stroke: url(#rj-grad); stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .dot { fill: #3fb950; }
+    @media (prefers-reduced-motion: no-preference) {
+      .spark { stroke-dasharray: 700; stroke-dashoffset: 700; animation: rj-draw 2.4s ease-out forwards; }
+      .dot { opacity: 0; animation: rj-pop 0.4s ease-out 2.2s forwards; }
+      @keyframes rj-draw { to { stroke-dashoffset: 0; } }
+      @keyframes rj-pop { to { opacity: 1; } }
+    }
+  </style>
+  <defs>
+    <linearGradient id="rj-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#58a6ff"/>
+      <stop offset="1" stop-color="#3fb950"/>
+    </linearGradient>
+  </defs>
+  <text x="28" y="92" class="name">Ricardo Jorge</text>
+  <text x="31" y="131" class="role">AI PRODUCT ENGINEER</text>
+  <text x="31" y="172" class="mono">lisbon, portugal · typescript since 2015 · rj11.io</text>
+  <path class="spark" d="M590 150 L630 120 L665 132 L700 88 L735 102 L770 62 L805 90 L840 50 L875 66 L912 30"/>
+  <circle class="dot" cx="912" cy="30" r="4.5"/>
+</svg>
