@@ -15,11 +15,11 @@ export function TerminalBlock({
   return (
     <div
       className={cn(
-        "border-border bg-card overflow-hidden rounded-lg border text-left shadow-sm",
-        className,
+        "overflow-hidden rounded-lg border border-border bg-card text-left shadow-sm",
+        className
       )}
     >
-      <div className="border-border bg-muted/50 flex items-center gap-2 border-b px-4 py-2.5">
+      <div className="flex items-center gap-2 border-b border-border bg-muted/50 px-4 py-2.5">
         <span className="size-2.5 rounded-full bg-[#ff5f57]" />
         <span className="size-2.5 rounded-full bg-[#febc2e]" />
         <span className="size-2.5 rounded-full bg-[#28c840]" />

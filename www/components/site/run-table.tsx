@@ -1,59 +1,56 @@
-import { formatDate, formatTokens, formatUsd, type RunCost } from "@/lib/bench"
+import { formatTokens, formatUsd, type RunRecord } from "@/lib/bench"
 
-/**
- * Measured run costs, most expensive first, with a relative cost bar so
- * the spread between runs reads at a glance.
- */
-export function RunTable({ runs }: { runs: RunCost[] }) {
+export function RunTable({ runs }: { runs: RunRecord[] }) {
   const maxCost = Math.max(...runs.map((run) => run.costUsd ?? 0), 0)
-
   return (
-    <div className="border-border overflow-x-auto rounded-lg border">
-      <table className="w-full text-sm">
+    <div className="overflow-x-auto rounded-lg border border-border">
+      <table className="w-full min-w-[760px] text-sm">
         <thead>
-          <tr className="border-border bg-muted/50 text-muted-foreground border-b text-left text-xs">
-            <th className="px-3 py-2 font-medium">Run</th>
-            <th className="px-3 py-2 font-medium">Harness</th>
-            <th className="px-3 py-2 font-medium">Ran</th>
-            <th className="px-3 py-2 text-right font-medium">Wall</th>
-            <th className="px-3 py-2 text-right font-medium">Cache hit</th>
-            <th className="px-3 py-2 text-right font-medium">Tokens</th>
-            <th className="px-3 py-2 text-right font-medium">Cost</th>
-            <th className="w-24 px-3 py-2" aria-hidden="true" />
+          <tr className="border-b border-border bg-muted/50 text-left font-mono text-[10px] tracking-[0.12em] text-muted-foreground uppercase">
+            <th className="px-3 py-2.5">Run</th>
+            <th className="px-3 py-2.5">Harness / model</th>
+            <th className="px-3 py-2.5">Status</th>
+            <th className="px-3 py-2.5 text-right">Rank</th>
+            <th className="px-3 py-2.5 text-right">Score</th>
+            <th className="px-3 py-2.5 text-right">Tokens</th>
+            <th className="px-3 py-2.5 text-right">Cost</th>
+            <th className="w-24 px-3 py-2.5" aria-hidden="true" />
           </tr>
         </thead>
         <tbody>
           {runs.map((run) => (
-            <tr key={run.id} className="border-border border-b last:border-0">
-              <td className="text-foreground px-3 py-2 font-mono text-xs whitespace-nowrap">
+            <tr
+              key={run.id}
+              className="border-b border-border/70 last:border-0"
+            >
+              <td className="px-3 py-2.5 font-mono text-xs whitespace-nowrap">
                 {run.id}
               </td>
-              <td className="text-muted-foreground px-3 py-2 whitespace-nowrap">
-                {run.harness}
+              <td className="px-3 py-2.5 whitespace-nowrap text-muted-foreground">
+                {[run.harness, run.model, run.effort]
+                  .filter(Boolean)
+                  .join(" · ") || "—"}
               </td>
-              <td className="text-muted-foreground px-3 py-2 whitespace-nowrap">
-                {formatDate(run.ranAt)}
+              <td className="px-3 py-2.5 whitespace-nowrap text-muted-foreground">
+                {run.status ?? "—"}
+                {run.auditStatus ? ` · audit ${run.auditStatus}` : ""}
               </td>
-              <td className="text-muted-foreground px-3 py-2 text-right whitespace-nowrap tabular-nums">
-                {run.wallTimeMinutes != null
-                  ? `${run.wallTimeMinutes.toFixed(1)} min`
-                  : "—"}
+              <td className="px-3 py-2.5 text-right font-mono tabular-nums">
+                {run.rank ?? "—"}
               </td>
-              <td className="text-muted-foreground px-3 py-2 text-right tabular-nums">
-                {run.cacheHitRate != null
-                  ? `${Math.round(run.cacheHitRate * 100)}%`
-                  : "—"}
+              <td className="px-3 py-2.5 text-right font-semibold tabular-nums">
+                {run.score?.toFixed(2) ?? "—"}
               </td>
-              <td className="text-muted-foreground px-3 py-2 text-right font-mono text-xs whitespace-nowrap tabular-nums">
+              <td className="px-3 py-2.5 text-right font-mono text-xs tabular-nums">
                 {formatTokens(run.tokens)}
               </td>
-              <td className="text-foreground px-3 py-2 text-right font-mono text-xs whitespace-nowrap tabular-nums">
+              <td className="px-3 py-2.5 text-right font-mono text-xs tabular-nums">
                 {formatUsd(run.costUsd)}
               </td>
-              <td className="px-3 py-2">
-                <div className="bg-muted h-1.5 w-20 overflow-hidden rounded-full">
+              <td className="px-3 py-2.5">
+                <div className="h-1.5 w-20 overflow-hidden rounded-full bg-muted">
                   <div
-                    className="bg-foreground/70 h-full rounded-full"
+                    className="h-full rounded-full bg-foreground/70"
                     style={{
                       width: `${maxCost > 0 && run.costUsd != null ? Math.max((run.costUsd / maxCost) * 100, 2) : 0}%`,
                     }}

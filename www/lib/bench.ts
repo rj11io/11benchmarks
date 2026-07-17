@@ -1,232 +1,354 @@
 import fs from "node:fs"
 import path from "node:path"
 
-/**
- * Build-time scanner over the 11bench repository. Every number and name the
- * site shows comes from here — never hardcode counts, versions, or run ids
- * in page copy.
- */
+type JsonRecord = Record<string, unknown>
 
-export type RunCost = {
+export type SiteNode = JsonRecord & {
+  nodeId: string
+  nodeType: "root" | "parent" | "benchmark" | "cycle" | "run"
+  title: string
+  parentId: string | null
+  children: string[]
+  summary: JsonRecord
+  metadataCoverage: JsonRecord
+  dataPath?: string
+  sourcePath?: string
+}
+
+type SiteIndex = {
+  nodes: SiteNode[]
+  sourceDigest: string
+  generatedAt: string
+  rootId: string
+}
+
+type ReviewData = JsonRecord & {
+  benchmark?: JsonRecord
+  cycle?: JsonRecord
+  lifecycle?: JsonRecord
+  judging?: JsonRecord
+  accounting?: JsonRecord
+  metadataCoverage?: JsonRecord
+  runs?: JsonRecord[]
+}
+
+export type RunRecord = {
   id: string
-  harness: string
-  model?: string | null
+  harness: string | null
+  model: string | null
+  effort: string | null
+  status: string | null
+  eligible: boolean | null
+  auditStatus: string | null
+  score: number | null
+  rank: number | null
   costUsd: number | null
   tokens: number | null
   cacheHitRate: number | null
   wallTimeMinutes: number | null
-  ranAt: string | null
+  metadataCoverage: JsonRecord
+}
+
+export type ScoreEntry = {
+  id: string
+  rank: number | null
+  total: number | null
+  dimensions: Record<string, number>
+}
+
+export type CycleRecord = {
+  id: string
+  title: string
+  status: string | null
+  releaseType: string | null
+  publicationSequence: number | null
+  sourcePath: string | null
+  runCount: number
+  scores: ScoreEntry[]
+  runs: RunRecord[]
+  judging: JsonRecord
+  accounting: JsonRecord
+  metadataCoverage: JsonRecord
+  lifecycle: JsonRecord
 }
 
 export type Benchmark = {
   slug: string
   title: string
-  pitch: string
-  deployedUrl: string | null
-  readme: string
+  objective: string
+  skillTags: string[]
+  evidenceSurfaces: string[]
+  campaignStatus: string | null
+  latestCycle: CycleRecord | null
+  cycles: CycleRecord[]
+  runCount: number
+  eligibleRunCount: number | null
+  judgeCounts: { total: number; ai: number; human: number }
+  totalTokens: number | null
+  pricing: string | null
+  knownRunCostUsd: number | null
+  metadataCoverage: JsonRecord
   githubPath: string
-  runs: RunCost[]
-  totalRunCostUsd: number | null
-  totalRunTokens: number | null
 }
 
-export type RepoMeta = {
-  version: string | null
-  githubUrl: string
-}
+export type RepoMeta = { version: string | null; githubUrl: string }
 
 const FALLBACK_GITHUB_URL = "https://github.com/rj11io/11bench"
 
-/**
- * The site builds from `www/`, but tooling sometimes runs from the repo
- * root — try both before giving up.
- */
 function repoRoot(): string {
   const candidates = [path.join(process.cwd(), ".."), process.cwd()]
   for (const candidate of candidates) {
-    if (
-      fs.existsSync(path.join(candidate, "v1")) &&
-      fs.existsSync(path.join(candidate, "README.md"))
-    ) {
-      return candidate
-    }
+    if (fs.existsSync(path.join(candidate, "v1"))) return candidate
   }
   return candidates[0]
 }
 
-function readTextIfExists(filePath: string): string | null {
+function readJson<T>(filePath: string): T | null {
   try {
-    return fs.readFileSync(filePath, "utf8")
+    return JSON.parse(fs.readFileSync(filePath, "utf8")) as T
   } catch {
     return null
   }
 }
 
-export function getRepoMeta(): RepoMeta {
-  const changelog = readTextIfExists(path.join(repoRoot(), "CHANGELOG.md"))
-  const version = changelog?.match(/^#+ \[(\d+\.\d+\.\d+)\]/m)?.[1] ?? null
-  const repoSlug = changelog?.match(
-    /github\.com\/([\w.-]+\/[\w.-]+?)(?:\/|$)/m,
-  )?.[1]
-  return {
-    version,
-    githubUrl: repoSlug ? `https://github.com/${repoSlug}` : FALLBACK_GITHUB_URL,
+function readSiteIndex(): SiteIndex {
+  const candidates = [
+    path.join(process.cwd(), "data", "site-index.json"),
+    path.join(repoRoot(), "www", "data", "site-index.json"),
+  ]
+  for (const candidate of candidates) {
+    const index = readJson<SiteIndex>(candidate)
+    if (index?.nodes) return index
   }
+  return { nodes: [], sourceDigest: "", generatedAt: "", rootId: "" }
 }
 
-/** Elevator pitch: the first prose paragraph of the root README. */
-export function getRepoPitch(): string {
-  const readme = readTextIfExists(path.join(repoRoot(), "README.md"))
-  return readme ? parsePitch(readme) : ""
+function record(value: unknown): JsonRecord {
+  return value && typeof value === "object" ? (value as JsonRecord) : {}
 }
 
-/** First `# Title` line of a README, or the directory name as fallback. */
-function parseTitle(readme: string, fallback: string): string {
-  return readme.match(/^# (.+)$/m)?.[1]?.trim() ?? fallback
+function array(value: unknown): unknown[] {
+  return Array.isArray(value) ? value : []
 }
 
-/**
- * First plain-prose paragraph after the title: skips headings, link-only
- * "Deployed at" lines, and blank lines, then joins one paragraph.
- */
-function parsePitch(readme: string): string {
-  const lines = readme.split("\n")
-  const paragraph: string[] = []
-  let pastTitle = false
-  for (const line of lines) {
-    const trimmed = line.trim()
-    if (!pastTitle) {
-      if (trimmed.startsWith("# ")) pastTitle = true
-      continue
+function stringValue(value: unknown): string | null {
+  return typeof value === "string" && value.length > 0 ? value : null
+}
+
+function numberValue(value: unknown): number | null {
+  return typeof value === "number" && Number.isFinite(value) ? value : null
+}
+
+function boolValue(value: unknown): boolean | null {
+  return typeof value === "boolean" ? value : null
+}
+
+function reviewFor(node: SiteNode): ReviewData | null {
+  if (!node.dataPath) return null
+  return readJson<ReviewData>(path.join(repoRoot(), node.dataPath))
+}
+
+function scoreEntries(
+  review: ReviewData | null,
+  runs: RunRecord[]
+): ScoreEntry[] {
+  const judging = record(review?.judging)
+  const aggregate = record(judging.aggregate)
+  const source = array(aggregate.runs).length
+    ? array(aggregate.runs)
+    : array(judging.runs)
+  const scores = source.map((value) => {
+    const item = record(value)
+    const dimensions = Object.fromEntries(
+      Object.entries(record(item.dimensions)).flatMap(([key, value]) => {
+        const number = numberValue(value)
+        return number == null ? [] : [[key, number]]
+      })
+    )
+    return {
+      id:
+        stringValue(item.runId) ??
+        stringValue(item.anonymizedAs) ??
+        "candidate",
+      rank: numberValue(item.rank) ?? numberValue(item.holisticMedianRank),
+      total: numberValue(item.total),
+      dimensions,
     }
-    if (paragraph.length === 0) {
-      if (
-        trimmed === "" ||
-        trimmed.startsWith("#") ||
-        /^deployed at/i.test(trimmed)
-      ) {
-        continue
-      }
-      paragraph.push(trimmed)
-    } else {
-      if (trimmed === "") break
-      paragraph.push(trimmed)
-    }
-  }
-  return paragraph.join(" ")
+  })
+  if (scores.length)
+    return scores.sort((a, b) => (a.rank ?? 999) - (b.rank ?? 999))
+  return runs
+    .filter((run) => run.score != null)
+    .sort((a, b) => (a.rank ?? 999) - (b.rank ?? 999))
+    .map((run) => ({
+      id: run.id,
+      rank: run.rank,
+      total: run.score,
+      dimensions: {},
+    }))
 }
 
-function parseDeployedUrl(readme: string): string | null {
-  return readme.match(/deployed at\s+\[?.*?(https?:\/\/\S+?)[)\s\]]/im)?.[1] ?? null
-}
-
-type SummaryRun = {
-  costUsd?: number | null
-  tokens?: number | null
-  kind?: string
-  harness?: string
-  cacheHitRate?: number
-  wallTimeMinutes?: number | null
-  ranAt?: string | null
-}
-
-/**
- * Measured run costs from a benchmark's `benchmark/costs/summary.json`.
- * Lenient on purpose: a missing or malformed file yields no runs, never a
- * broken build.
- */
-function parseRuns(benchmarkDir: string): RunCost[] {
-  const raw = readTextIfExists(
-    path.join(benchmarkDir, "benchmark", "costs", "summary.json"),
-  )
-  if (!raw) return []
-  try {
-    const summary = JSON.parse(raw) as { runs?: Record<string, SummaryRun> | Array<SummaryRun & { id: string }> }
-    const entries = Array.isArray(summary.runs)
-      ? summary.runs.map((run) => [run.id, run] as const)
-      : Object.entries(summary.runs ?? {})
-    return entries
-      .filter(([, run]) => !((run as SummaryRun).kind) || (run as SummaryRun).kind === "benchmark-run")
-      .map(([id, run]) => ({
-        id,
-        harness: run.harness ?? "unknown",
-        model: (run as SummaryRun & { model?: string | null }).model ?? null,
-        costUsd: typeof run.costUsd === "number" ? run.costUsd : null,
-        tokens: typeof run.tokens === "number" ? run.tokens : null,
-        cacheHitRate:
-          typeof run.cacheHitRate === "number" ? run.cacheHitRate : null,
-        wallTimeMinutes:
-          typeof run.wallTimeMinutes === "number" ? run.wallTimeMinutes : null,
-        ranAt: typeof run.ranAt === "string" ? run.ranAt : null,
-      }))
-      .sort((a, b) => (b.costUsd ?? -1) - (a.costUsd ?? -1))
-  } catch {
-    return []
-  }
-}
-
-/**
- * Every directory under `v1/` with a README is a benchmark. Directories
- * whose names start with `_` (like `_app-boilerplate_`) are internal
- * tooling and stay off the site.
- */
-export function getBenchmarks(): Benchmark[] {
-  const v1Dir = path.join(repoRoot(), "v1")
-  let entries: fs.Dirent[]
-  try {
-    entries = fs.readdirSync(v1Dir, { withFileTypes: true })
-  } catch {
-    return []
-  }
-
-  return entries
-    .filter((entry) => entry.isDirectory() && !entry.name.startsWith("_"))
-    .flatMap((entry) => {
-      const dir = path.join(v1Dir, entry.name)
-      const readme = readTextIfExists(path.join(dir, "README.md"))
-      if (!readme) return []
-      const runs = parseRuns(dir)
-      return [
-        {
-          slug: entry.name,
-          title: parseTitle(readme, entry.name),
-          pitch: parsePitch(readme),
-          deployedUrl: parseDeployedUrl(readme),
-          readme,
-          githubPath: `v1/${entry.name}`,
-          runs,
-          totalRunCostUsd:
-            runs.some((run) => run.costUsd != null)
-              ? runs.reduce((sum, run) => sum + (run.costUsd ?? 0), 0)
-              : null,
-          totalRunTokens: runs.some((run) => run.tokens != null)
-            ? runs.reduce((sum, run) => sum + (run.tokens ?? 0), 0)
-            : null,
-        },
-      ]
+function runRecords(node: SiteNode, review: ReviewData | null): RunRecord[] {
+  const reviewRuns = new Map(
+    array(review?.runs).map((value) => {
+      const item = record(value)
+      const id = stringValue(item.id) ?? stringValue(item.runId) ?? ""
+      return [id, item]
     })
-    .sort((a, b) => b.runs.length - a.runs.length || a.slug.localeCompare(b.slug))
+  )
+  return node.children
+    .map((childId) =>
+      readSiteIndex().nodes.find((child) => child.nodeId === childId)
+    )
+    .filter((child): child is SiteNode => Boolean(child))
+    .map((child) => {
+      const summary = child.summary
+      const reviewed = reviewRuns.get(child.title) ?? {}
+      const score = record(summary.score)
+      const cost = record(summary.cost)
+      return {
+        id: child.title,
+        harness: stringValue(summary.harness),
+        model: stringValue(summary.model),
+        effort: stringValue(summary.effort),
+        status: stringValue(summary.status) ?? stringValue(reviewed.status),
+        eligible: boolValue(summary.eligible) ?? boolValue(reviewed.eligible),
+        auditStatus: stringValue(record(summary.audit).status),
+        score: numberValue(score.total),
+        rank: numberValue(score.rank),
+        costUsd: numberValue(cost.costUsd),
+        tokens:
+          numberValue(summary.tokens) ??
+          numberValue(record(reviewed.tokens).total),
+        cacheHitRate: numberValue(cost.cacheHitRate),
+        wallTimeMinutes: numberValue(cost.wallTimeMinutes),
+        metadataCoverage: child.metadataCoverage,
+      }
+    })
+}
+
+function cycleFromNode(node: SiteNode): CycleRecord {
+  const review = reviewFor(node)
+  const cycle = record(review?.cycle)
+  const lifecycle = record(review?.lifecycle)
+  const judging = record(review?.judging)
+  const accounting = record(review?.accounting)
+  const runs = runRecords(node, review)
+  return {
+    id: stringValue(cycle.cycleId) ?? node.title,
+    title: node.title,
+    status: stringValue(cycle.status),
+    releaseType: stringValue(cycle.releaseType),
+    publicationSequence: numberValue(cycle.publicationSequence),
+    sourcePath: node.dataPath ?? null,
+    runCount: runs.length || array(cycle.runIds).length,
+    scores: scoreEntries(review, runs),
+    runs,
+    judging,
+    accounting,
+    metadataCoverage: review?.metadataCoverage ?? node.metadataCoverage,
+    lifecycle,
+  }
+}
+
+function benchmarkFromNode(node: SiteNode, allNodes: SiteNode[]): Benchmark {
+  const cycles = node.children
+    .map((id) => allNodes.find((child) => child.nodeId === id))
+    .filter((child): child is SiteNode => Boolean(child))
+    .map(cycleFromNode)
+    .sort((a, b) => (b.publicationSequence ?? 0) - (a.publicationSequence ?? 0))
+  const latestCycle = cycles[0] ?? null
+  const review = latestCycle
+    ? readJson<ReviewData>(path.join(repoRoot(), latestCycle.sourcePath ?? ""))
+    : null
+  const benchmarkData = record(review?.benchmark)
+  const lifecycle = record(review?.lifecycle)
+  const metadata = record(review?.metadataCoverage)
+  const accounting = latestCycle ? latestCycle.accounting : {}
+  const total = record(accounting.total)
+  const pricing = record(accounting.pricing)
+  const judging = record(review?.judging)
+  const judge = record(judging.count)
+  const judgeCounts = record(judging.judgeCounts)
+  const fallbackRunCount = latestCycle?.runCount ?? 0
+  const runCount =
+    numberValue(lifecycle.totalRuns) ??
+    numberValue(metadata.registeredRunCount) ??
+    fallbackRunCount
+  const eligibleRunCount =
+    numberValue(lifecycle.eligibleRuns) ??
+    numberValue(metadata.eligibleRunCount) ??
+    null
+  const knownRunCostUsd =
+    latestCycle?.runs.reduce((sum, run) => sum + (run.costUsd ?? 0), 0) || null
+  return {
+    slug: node.sourcePath?.split("/").at(-1) ?? node.title,
+    title: stringValue(benchmarkData.name) ?? node.title.replace(/-v\d+$/, ""),
+    objective:
+      stringValue(benchmarkData.objective) ??
+      "Benchmark objective unavailable in the published review.",
+    skillTags: array(benchmarkData.skillTags).filter(
+      (value): value is string => typeof value === "string"
+    ),
+    evidenceSurfaces: array(
+      benchmarkData.evidenceSurfaces ?? record(review?.cycle).evidenceSurfaces
+    ).filter((value): value is string => typeof value === "string"),
+    campaignStatus: stringValue(lifecycle.campaignStatus),
+    latestCycle,
+    cycles,
+    runCount,
+    eligibleRunCount,
+    judgeCounts: {
+      total: numberValue(judge.total) ?? numberValue(judgeCounts.total) ?? 0,
+      ai: numberValue(judge.ai) ?? numberValue(judgeCounts.ai) ?? 0,
+      human: numberValue(judge.human) ?? numberValue(judgeCounts.human) ?? 0,
+    },
+    totalTokens: numberValue(total.tokens),
+    pricing: stringValue(pricing.pricing) ?? stringValue(metadata.pricing),
+    knownRunCostUsd,
+    metadataCoverage: { ...metadata, ...latestCycle?.metadataCoverage },
+    githubPath: node.sourcePath ?? `v1/${node.title}`,
+  }
+}
+
+export function getSiteNodes(): SiteNode[] {
+  return readSiteIndex().nodes
+}
+
+export function getBenchmarks(): Benchmark[] {
+  const nodes = getSiteNodes()
+  return nodes
+    .filter((node) => node.nodeType === "benchmark")
+    .map((node) => benchmarkFromNode(node, nodes))
+    .sort((a, b) => a.title.localeCompare(b.title))
 }
 
 export function getBenchmark(slug: string): Benchmark | null {
   return getBenchmarks().find((benchmark) => benchmark.slug === slug) ?? null
 }
 
-export type Totals = {
-  benchmarks: number
-  runs: number
-  runCostUsd: number
-  runTokens: number
+export function getRepoMeta(): RepoMeta {
+  const changelog = readJson<{ version?: string }>(
+    path.join(repoRoot(), "package.json")
+  )
+  return { version: changelog?.version ?? null, githubUrl: FALLBACK_GITHUB_URL }
 }
+
+export function getRepoPitch(): string {
+  return "A public, review-backed catalog of how coding agents solve the same product and design tasks."
+}
+
+export type Totals = { benchmarks: number; runs: number; tokens: number }
 
 export function getTotals(): Totals {
   const benchmarks = getBenchmarks()
-  const runs = benchmarks.flatMap((benchmark) => benchmark.runs)
   return {
     benchmarks: benchmarks.length,
-    runs: runs.length,
-    runCostUsd: runs.reduce((sum, run) => sum + (run.costUsd ?? 0), 0),
-    runTokens: runs.reduce((sum, run) => sum + (run.tokens ?? 0), 0),
+    runs: benchmarks.reduce((sum, benchmark) => sum + benchmark.runCount, 0),
+    tokens: benchmarks.reduce(
+      (sum, benchmark) => sum + (benchmark.totalTokens ?? 0),
+      0
+    ),
   }
 }
 
@@ -236,19 +358,20 @@ export function formatUsd(value: number | null): string {
 
 export function formatTokens(value: number | null): string {
   if (value == null) return "—"
-  if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(2)}M`
+  if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(1)}M`
   if (value >= 1_000) return `${Math.round(value / 1_000)}k`
   return value.toLocaleString("en-US")
 }
 
-export function formatDate(iso: string | null): string {
-  if (!iso) return "—"
-  const date = new Date(iso)
-  if (Number.isNaN(date.getTime())) return "—"
-  return date.toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-    timeZone: "UTC",
-  })
+export function formatDate(value: string | null): string {
+  if (!value) return "—"
+  const date = new Date(value)
+  return Number.isNaN(date.getTime())
+    ? "—"
+    : date.toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+        timeZone: "UTC",
+      })
 }

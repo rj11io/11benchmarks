@@ -30,8 +30,8 @@ export function CopyButton({
       onClick={copy}
       aria-label={copied ? "Copied" : "Copy to clipboard"}
       className={cn(
-        "text-muted-foreground hover:text-foreground hover:bg-muted inline-flex size-7 shrink-0 items-center justify-center rounded-md transition-colors",
-        className,
+        "inline-flex size-7 shrink-0 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground",
+        className
       )}
     >
       {copied ? <Check className="size-3.5" /> : <Copy className="size-3.5" />}

@@ -23,7 +23,8 @@ function renderInline(text: string, linkBase?: string): React.ReactNode[] {
   // Order matters: code first so its contents are never re-parsed.
   // Bold uses a lazy `.+?` so it can wrap code spans that contain `*`
   // (e.g. **`content/*.md`**).
-  const pattern = /(`[^`]+`)|(\*\*.+?\*\*)|(\*[^*]+\*)|(\[([^\]]+)\]\(([^)\s]+)\))|(https?:\/\/[^\s<>)]+)/g
+  const pattern =
+    /(`[^`]+`)|(\*\*.+?\*\*)|(\*[^*]+\*)|(\[([^\]]+)\]\(([^)\s]+)\))|(https?:\/\/[^\s<>)]+)/g
   let lastIndex = 0
   let match: RegExpExecArray | null
   let key = 0
@@ -37,19 +38,21 @@ function renderInline(text: string, linkBase?: string): React.ReactNode[] {
       nodes.push(
         <code
           key={key++}
-          className="bg-muted rounded px-1 py-0.5 font-mono text-[0.85em]"
+          className="rounded bg-muted px-1 py-0.5 font-mono text-[0.85em]"
         >
           {token.slice(1, -1)}
-        </code>,
+        </code>
       )
     } else if (token.startsWith("**")) {
       nodes.push(
-        <strong key={key++} className="text-foreground font-medium">
+        <strong key={key++} className="font-medium text-foreground">
           {renderInline(token.slice(2, -2), linkBase)}
-        </strong>,
+        </strong>
       )
     } else if (token.startsWith("*")) {
-      nodes.push(<em key={key++}>{renderInline(token.slice(1, -1), linkBase)}</em>)
+      nodes.push(
+        <em key={key++}>{renderInline(token.slice(1, -1), linkBase)}</em>
+      )
     } else if (token.startsWith("[")) {
       const href = resolveHref(match[6], linkBase)
       nodes.push(
@@ -61,19 +64,19 @@ function renderInline(text: string, linkBase?: string): React.ReactNode[] {
           rel={href.startsWith("http") ? "noreferrer" : undefined}
         >
           {renderInline(match[5], linkBase)}
-        </a>,
+        </a>
       )
     } else {
       nodes.push(
         <a
           key={key++}
           href={token}
-          className="text-foreground underline underline-offset-4 break-all"
+          className="break-all text-foreground underline underline-offset-4"
           target="_blank"
           rel="noreferrer"
         >
           {token}
-        </a>,
+        </a>
       )
     }
     lastIndex = match.index + token.length
@@ -116,7 +119,12 @@ export function Markdown({
 
     if (trimmed === "" || trimmed.startsWith("<!--")) {
       // Skip blanks and the HTML comments used for operator notes.
-      while (i < lines.length && lines[i].trim().startsWith("<!--") && !lines[i].includes("-->")) i++
+      while (
+        i < lines.length &&
+        lines[i].trim().startsWith("<!--") &&
+        !lines[i].includes("-->")
+      )
+        i++
       i++
       continue
     }
@@ -133,10 +141,10 @@ export function Markdown({
       blocks.push(
         <pre
           key={key++}
-          className="bg-muted/50 border-border overflow-x-auto rounded-lg border p-4 font-mono text-[13px] leading-relaxed"
+          className="overflow-x-auto rounded-lg border border-border bg-muted/50 p-4 font-mono text-[13px] leading-relaxed"
         >
           <code>{code.join("\n")}</code>
-        </pre>,
+        </pre>
       )
       continue
     }
@@ -148,23 +156,37 @@ export function Markdown({
       const content = renderInline(heading[2], linkBase)
       const classes = [
         "scroll-mt-20 font-semibold tracking-tight text-foreground",
-        level === 1 ? "text-2xl mt-2" : level === 2 ? "text-xl mt-8" : "text-base mt-6",
+        level === 1
+          ? "text-2xl mt-2"
+          : level === 2
+            ? "text-xl mt-8"
+            : "text-base mt-6",
       ].join(" ")
       blocks.push(
         level === 1 ? (
-          <h2 key={key++} className={classes}>{content}</h2>
+          <h2 key={key++} className={classes}>
+            {content}
+          </h2>
         ) : level === 2 ? (
-          <h3 key={key++} className={classes}>{content}</h3>
+          <h3 key={key++} className={classes}>
+            {content}
+          </h3>
         ) : (
-          <h4 key={key++} className={classes}>{content}</h4>
-        ),
+          <h4 key={key++} className={classes}>
+            {content}
+          </h4>
+        )
       )
       i++
       continue
     }
 
     // Table
-    if (trimmed.startsWith("|") && i + 1 < lines.length && isTableDivider(lines[i + 1])) {
+    if (
+      trimmed.startsWith("|") &&
+      i + 1 < lines.length &&
+      isTableDivider(lines[i + 1])
+    ) {
       const header = splitRow(lines[i])
       i += 2
       const rows: string[][] = []
@@ -173,12 +195,18 @@ export function Markdown({
         i++
       }
       blocks.push(
-        <div key={key++} className="border-border overflow-x-auto rounded-lg border">
+        <div
+          key={key++}
+          className="overflow-x-auto rounded-lg border border-border"
+        >
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-border bg-muted/50 border-b">
+              <tr className="border-b border-border bg-muted/50">
                 {header.map((cell, index) => (
-                  <th key={index} className="text-foreground px-3 py-2 text-left font-medium">
+                  <th
+                    key={index}
+                    className="px-3 py-2 text-left font-medium text-foreground"
+                  >
                     {renderInline(cell, linkBase)}
                   </th>
                 ))}
@@ -186,9 +214,15 @@ export function Markdown({
             </thead>
             <tbody>
               {rows.map((row, rowIndex) => (
-                <tr key={rowIndex} className="border-border border-b last:border-0">
+                <tr
+                  key={rowIndex}
+                  className="border-b border-border last:border-0"
+                >
                   {row.map((cell, cellIndex) => (
-                    <td key={cellIndex} className="text-muted-foreground px-3 py-2 align-top">
+                    <td
+                      key={cellIndex}
+                      className="px-3 py-2 align-top text-muted-foreground"
+                    >
                       {renderInline(cell, linkBase)}
                     </td>
                   ))}
@@ -196,7 +230,7 @@ export function Markdown({
               ))}
             </tbody>
           </table>
-        </div>,
+        </div>
       )
       continue
     }
@@ -211,10 +245,10 @@ export function Markdown({
       blocks.push(
         <blockquote
           key={key++}
-          className="border-border text-muted-foreground border-l-2 pl-4 italic"
+          className="border-l-2 border-border pl-4 text-muted-foreground italic"
         >
           {renderInline(quote.join(" "), linkBase)}
-        </blockquote>,
+        </blockquote>
       )
       continue
     }
@@ -229,7 +263,11 @@ export function Markdown({
         if (/^[-*] /.test(itemTrimmed) || /^\d+\. /.test(itemTrimmed)) {
           items.push(itemTrimmed.replace(/^([-*]|\d+\.) /, ""))
           i++
-        } else if (itemTrimmed !== "" && /^\s{2,}/.test(itemLine) && items.length > 0) {
+        } else if (
+          itemTrimmed !== "" &&
+          /^\s{2,}/.test(itemLine) &&
+          items.length > 0
+        ) {
           items[items.length - 1] += ` ${itemTrimmed}`
           i++
         } else {
@@ -243,14 +281,20 @@ export function Markdown({
       ))
       blocks.push(
         ordered ? (
-          <ol key={key++} className="text-muted-foreground list-decimal space-y-1.5 pl-5">
+          <ol
+            key={key++}
+            className="list-decimal space-y-1.5 pl-5 text-muted-foreground"
+          >
             {itemNodes}
           </ol>
         ) : (
-          <ul key={key++} className="text-muted-foreground list-disc space-y-1.5 pl-5">
+          <ul
+            key={key++}
+            className="list-disc space-y-1.5 pl-5 text-muted-foreground"
+          >
             {itemNodes}
           </ul>
-        ),
+        )
       )
       continue
     }
@@ -267,9 +311,9 @@ export function Markdown({
       i++
     }
     blocks.push(
-      <p key={key++} className="text-muted-foreground leading-relaxed">
+      <p key={key++} className="leading-relaxed text-muted-foreground">
         {renderInline(paragraph.join(" "), linkBase)}
-      </p>,
+      </p>
     )
   }
 
