@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/rj11io/11bench/compare/v1.5.0...v1.6.0) (2026-07-17)
+
+
+### Features
+
+* claude bench ([fcec02d](https://github.com/rj11io/11bench/commit/fcec02dae9ab84fc4e3090e8be6db777c816134d))
+
 # [1.5.0](https://github.com/rj11io/11bench/compare/v1.4.0...v1.5.0) (2026-07-17)
 
 
