@@ -8,6 +8,18 @@ captivating, GitHub-compatible profile.
 Extraction, research, editorial judgment, information design, creative flair,
 technical compatibility, and the final rendered README are all judged.
 
+## Current benchmark status
+
+The published `cycle-1` interim release includes all 26 finished runs. One AI
+judge scored the anonymized cohort, and the campaign remains open.
+
+Accounting covers 41 transcript threads and 83,170,245 tokens. Matched
+benchmark runs cost $49.82, the judge cost $3.21, and priced benchmark
+operations cost $0.37, for a partial known total of $53.40. These are
+API-equivalent estimates rather than subscription invoices; 13 threads remain
+unpriced. See the [published report](benchmark/cycles/cycle-1/report/report.md)
+and [canonical cost ledger](benchmark/costs/COSTS.md).
+
 ## Frozen inputs
 
 - `ref/RJ_CV.pdf` — concise two-page source.
@@ -39,5 +51,3 @@ Each run owns `runs/<run-id>/`:
    desktop and narrow widths.
 6. Judge anonymized process artifacts and final renders.
 7. Measure cost, review the artifact set, and only then publish.
-
-No runs have been started.

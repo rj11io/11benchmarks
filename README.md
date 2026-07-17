@@ -10,16 +10,33 @@ The current website is deployed at [bench.rj11.io](https://bench.rj11.io/).
 | Path | Purpose |
 | --- | --- |
 | [`www/`](www/) | Current Next.js website for 11bench |
-| [`v1/cv-design-bench/`](v1/cv-design-bench/) | Historical prototype that informed the benchmark skills; retained with its original runs and costs |
 | [`v1/cv-redesign-bench/`](v1/cv-redesign-bench/) | Clean PDF-to-two-page-CV research, extraction, content, and design benchmark |
 | [`v1/cyber-dashboard-bench/`](v1/cyber-dashboard-bench/) | Clean end-to-end cybersecurity product research, PRD, design, and frontend benchmark |
 | [`v1/crypto-dashboard-bench/`](v1/crypto-dashboard-bench/) | Clean end-to-end crypto product research, PRD, design, and frontend benchmark |
 | [`v1/gh-readme-bench/`](v1/gh-readme-bench/) | Clean PDF-to-GitHub-profile research, extraction, editorial, and creative benchmark |
 | [`v1/_app-boilerplate_/`](v1/_app-boilerplate_/) | Reusable Next.js and shadcn/ui starter for v1 benchmarks |
 
-The four clean benchmarks start with empty run ledgers, frozen rubrics, and
-operator-owned artifact directories. The historical `cv-design-bench` is not a
-clean cohort and should not be mixed into their future aggregate results.
+The four benchmark suites use frozen inputs and rubrics, operator-owned
+artifact directories, and interim releases that remain open for later runs.
+Their detailed reports distinguish eligible, excluded, and unpublished work.
+
+## Benchmark status and costs
+
+The table below summarizes the latest published interim release for each suite.
+Costs are transcript-derived API-equivalent estimates, not subscription
+invoices. “Partial known total” includes matched runs, the judge, and priced
+benchmark operations; threads without a verified provider price remain
+unpriced.
+
+| Benchmark | Latest published release | Judged / finished | Judge | Matched runs | Judge cost | Partial known total |
+| --- | --- | ---: | --- | ---: | ---: | ---: |
+| [`crypto-dashboard-bench`](v1/crypto-dashboard-bench/) | [`cycle-1`](v1/crypto-dashboard-bench/benchmark/cycles/cycle-1/report/report.md) · interim | 16 / 26 | 1 AI | $102.20 | $3.23 | $106.81 |
+| [`cv-redesign-bench`](v1/cv-redesign-bench/) | [`cycle-1`](v1/cv-redesign-bench/benchmark/cycles/cycle-1/report/report.md) · interim | 2 / 35 | 1 AI | $132.29 | $2.87 | $201.24 |
+| [`cyber-dashboard-bench`](v1/cyber-dashboard-bench/) | [`2026-07-17-v2`](v1/cyber-dashboard-bench/benchmark/cycles/cyber-dashboard-2026-07-17-v2/report/report.md) · interim | 24 / 26 | 1 AI | $94.82 | $3.80 | $99.53 |
+| [`gh-readme-bench`](v1/gh-readme-bench/) | [`cycle-1`](v1/gh-readme-bench/benchmark/cycles/cycle-1/report/report.md) · interim | 26 / 26 | 1 AI | $49.82 | $3.21 | $53.40 |
+
+Open each suite README for its accounting links, rubric, and current-cycle
+caveats. The canonical detailed ledgers are [`crypto costs`](v1/crypto-dashboard-bench/benchmark/costs/COSTS.md), [`CV costs`](v1/cv-redesign-bench/benchmark/costs/COSTS.md), [`cyber costs`](v1/cyber-dashboard-bench/benchmark/costs/COSTS.md), and [`GitHub README costs`](v1/gh-readme-bench/benchmark/costs/COSTS.md).
 
 ## Run an app locally
 

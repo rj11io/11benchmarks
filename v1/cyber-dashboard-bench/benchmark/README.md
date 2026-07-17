@@ -2,6 +2,11 @@
 
 This directory is operator-owned and read-only for candidate agents.
 
+The published interim release is [`2026-07-17-v2`](cycles/cyber-dashboard-2026-07-17-v2/report/report.md),
+with 24 judged runs from 26 finished runs and one AI judge. A `v3` collection
+cycle exists but is not yet published. Accounting and the limitations of the
+cost estimates are documented in [`costs/COSTS.md`](costs/COSTS.md).
+
 The lifecycle uses:
 
 - `runs.json` for the ledger and frozen-input hashes;

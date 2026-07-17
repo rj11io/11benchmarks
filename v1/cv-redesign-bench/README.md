@@ -1,13 +1,27 @@
 # cv-redesign-bench
 
-A clean successor to the prototype `cv-design-bench`. Every coding agent must
-independently recover and improve the CV content from the same two reference
-PDFs, research an appropriate contemporary CV direction, and implement a
-responsive web CV whose print output is exactly two A4 pages.
+A clean PDF-to-two-page-CV benchmark. Every coding agent must independently
+recover and improve the CV content from the same two reference PDFs, research
+an appropriate contemporary CV direction, and implement a responsive web CV
+whose print output is exactly two A4 pages.
 
 This benchmark evaluates the whole chain: source extraction, inference
 discipline, content editing, design research, design rationale, screen
 execution, and print execution.
+
+## Current benchmark status
+
+The published `cycle-1` interim release judges 2 eligible runs from 35 finished
+runs; 33 legacy routes remain excluded because route-matched exact A4 PDF
+evidence was unavailable. One AI judge scored the cohort, and the campaign
+remains open.
+
+Accounting covers 46 transcript threads and 409,730,298 tokens. Matched
+benchmark runs cost $132.29, the judge cost $2.87, and priced benchmark
+operations cost $66.09, for a partial known total of $201.24. These are
+API-equivalent estimates rather than subscription invoices; 2 threads remain
+unpriced. See the [published report](benchmark/cycles/cycle-1/report/report.md)
+and [canonical cost ledger](benchmark/costs/COSTS.md).
 
 ## Frozen inputs
 
@@ -46,8 +60,6 @@ Each run owns `app/<run-id>/` and must contain:
 6. Capture desktop, mobile, and every print page using identical settings.
 7. Judge the anonymized research, content, design, and rendered evidence.
 8. Measure cost, review the complete artifact set, and only then publish.
-
-No runs have been started in this clean suite.
 
 ## Local development
 

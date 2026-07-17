@@ -10,6 +10,20 @@ The benchmark judges every stage, including whether the final interface
 actually implements the decisions made in the research, PRD, and design
 document.
 
+## Current benchmark status
+
+The published `cyber-dashboard-2026-07-17-v2` interim release includes 24
+anonymously judged runs from 26 finished runs; 2 runs were excluded after
+rendering-audit failures. One AI judge scored the cohort. A later `v3` cycle is
+collecting evidence and is not yet published; the campaign remains open.
+
+Accounting covers 48 transcript threads and 138,661,098 tokens. Matched
+benchmark runs cost $94.82, the judge cost $3.80, and priced benchmark
+operations cost $0.91, for a partial known total of $99.53. These are
+API-equivalent estimates rather than subscription invoices; 17 threads remain
+unpriced. See the [published report](benchmark/cycles/cyber-dashboard-2026-07-17-v2/report/report.md)
+and [canonical cost ledger](benchmark/costs/COSTS.md).
+
 ## Required outputs per run
 
 Each run owns `app/<run-id>/`:
@@ -36,8 +50,6 @@ a backend to evaluate.
 5. Capture the three written artifacts plus identical desktop and mobile
    product evidence.
 6. Judge anonymized runs, measure cost, consolidate, and only then publish.
-
-No runs have been started.
 
 ## Local development
 

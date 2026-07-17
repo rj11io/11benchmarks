@@ -9,6 +9,19 @@ demo.
 Research, product thinking, design thinking, domain correctness, and execution
 are all first-class judged outputs.
 
+## Current benchmark status
+
+The published `cycle-1` interim release includes 16 anonymously judged runs
+from 26 finished runs; 10 runs were excluded after route/build failures. One AI
+judge scored the cohort, and the campaign remains open.
+
+Accounting covers 48 transcript threads and 153,076,710 tokens. Matched
+benchmark runs cost $102.20, the judge cost $3.23, and priced benchmark
+operations cost $1.37, for a partial known total of $106.81. These are
+API-equivalent estimates rather than subscription invoices; 17 threads remain
+unpriced. See the [published report](benchmark/cycles/cycle-1/report/report.md)
+and [canonical cost ledger](benchmark/costs/COSTS.md).
+
 ## Required outputs per run
 
 Each run owns `app/<run-id>/`:
@@ -33,8 +46,8 @@ final cycle.
 
 Canonical outputs are under `benchmark/cycles/cycle-1/`, including the reviewed
 data, report, anonymized evidence, judge artifact, aggregate, and current
-pointer. Transcript token counts are reconciled under `benchmark/costs/`; USD
-pricing is explicitly unavailable for this historical run.
+pointer. Transcript token counts and API-equivalent pricing are reconciled under
+`benchmark/costs/`; some synthetic operations remain unpriced.
 
 ## Local development
 

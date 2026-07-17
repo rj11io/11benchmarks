@@ -2,6 +2,11 @@
 
 This directory is operator-owned and read-only for candidate agents.
 
+The published interim release is [`cycle-1`](cycles/cycle-1/report/report.md).
+It contains all 26 finished runs and one AI judge. Accounting and the
+limitations of the cost estimates are documented in
+[`costs/COSTS.md`](costs/COSTS.md).
+
 | Path | Purpose |
 | --- | --- |
 | `runs.json` | Run ledger with baseline, prompt, reference, and rubric hashes |

@@ -3,8 +3,15 @@
 The current Next.js website for 11bench, deployed at
 [bench.rj11.io](https://bench.rj11.io/).
 
-The home page is still the starter screen, with the shared theme provider and
-shadcn/ui component set ready for the benchmark interface.
+The site presents the benchmark catalog and per-benchmark pages. At build time
+it scans `v1/*/README.md` files, excludes internal directories such as
+`_app-boilerplate_`, and reads measured run summaries from each
+`benchmark/costs/summary.json`. The pages show benchmark descriptions, measured
+run counts, token totals, and run cost summaries; detailed judging and partial
+cost accounting remains in each benchmark's repository artifacts.
+
+The four current benchmark pages are `crypto-dashboard-bench`,
+`cv-redesign-bench`, `cyber-dashboard-bench`, and `gh-readme-bench`.
 
 ## Local development
 
