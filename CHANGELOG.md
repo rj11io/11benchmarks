@@ -1,3 +1,15 @@
+# [1.7.0](https://github.com/rj11io/11bench/compare/v1.6.0...v1.7.0) (2026-07-17)
+
+
+### Bug Fixes
+
+* judge mds ([7898c38](https://github.com/rj11io/11bench/commit/7898c387a4c411abef3ed16bd5475bbf49eb2d8f))
+
+
+### Features
+
+* update bench content ([ce0022a](https://github.com/rj11io/11bench/commit/ce0022a0a10e7515e930d08c08e037171b5ea3bb))
+
 # [1.6.0](https://github.com/rj11io/11bench/compare/v1.5.0...v1.6.0) (2026-07-17)
 
 
