@@ -159,6 +159,30 @@ export type Benchmark = {
   generatedAt: string | null
 }
 
+export type CatalogBenchmark = {
+  slug: string
+  title: string
+  objective: string
+  skillTags: string[]
+  evidenceSurfaces: string[]
+  campaignStatus: string | null
+  latestCycle: {
+    id: string
+    releaseType: string | null
+    scores: Array<Pick<ScoreEntry, "total">>
+  } | null
+  runCount: number
+  eligibleRunCount: number | null
+  totalAccountingCostUsd: number | null
+  pricing: string | null
+  providers: string[]
+  harnesses: string[]
+  models: string[]
+  efforts: string[]
+  githubPath: string
+  generatedAt: string | null
+}
+
 export type RepoMeta = {
   version: string | null
   githubUrl: string
@@ -600,6 +624,34 @@ export function getBenchmarks(): Benchmark[] {
     .filter((node) => node.nodeType === "benchmark")
     .map((node) => benchmarkFromNode(node, nodes))
     .sort((a, b) => a.title.localeCompare(b.title))
+}
+
+export function toCatalogBenchmark(benchmark: Benchmark): CatalogBenchmark {
+  return {
+    slug: benchmark.slug,
+    title: benchmark.title,
+    objective: benchmark.objective,
+    skillTags: benchmark.skillTags,
+    evidenceSurfaces: benchmark.evidenceSurfaces,
+    campaignStatus: benchmark.campaignStatus,
+    latestCycle: benchmark.latestCycle
+      ? {
+          id: benchmark.latestCycle.id,
+          releaseType: benchmark.latestCycle.releaseType,
+          scores: benchmark.latestCycle.scores.map(({ total }) => ({ total })),
+        }
+      : null,
+    runCount: benchmark.runCount,
+    eligibleRunCount: benchmark.eligibleRunCount,
+    totalAccountingCostUsd: benchmark.totalAccountingCostUsd,
+    pricing: benchmark.pricing,
+    providers: benchmark.providers,
+    harnesses: benchmark.harnesses,
+    models: benchmark.models,
+    efforts: benchmark.efforts,
+    githubPath: benchmark.githubPath,
+    generatedAt: benchmark.generatedAt,
+  }
 }
 
 export function getBenchmark(slug: string): Benchmark | null {
