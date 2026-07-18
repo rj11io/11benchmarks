@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/rj11io/11bench/compare/v1.8.1...v1.8.2) (2026-07-18)
+
+
+### Bug Fixes
+
+* build ([d7a90d7](https://github.com/rj11io/11bench/commit/d7a90d7456debba9bab3e77e52e0346c09e011b9))
+
 ## [1.8.1](https://github.com/rj11io/11bench/compare/v1.8.0...v1.8.1) (2026-07-18)
 
 
