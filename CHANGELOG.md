@@ -1,3 +1,10 @@
+## [1.8.3](https://github.com/rj11io/11bench/compare/v1.8.2...v1.8.3) (2026-07-18)
+
+
+### Bug Fixes
+
+* v0 refactor ([8857ca8](https://github.com/rj11io/11bench/commit/8857ca8cff16a11806a8c429dc67cb0dc259099a))
+
 ## [1.8.2](https://github.com/rj11io/11bench/compare/v1.8.1...v1.8.2) (2026-07-18)
 
 
